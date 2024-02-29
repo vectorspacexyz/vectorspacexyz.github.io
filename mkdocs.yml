@@ -1,0 +1,20 @@
+site_name: vectorspace.xyz
+theme:
+  name: material
+  custom_dir: docs/overrides
+  # favicon: img/tux.svg
+  # favicon: img/Tux.png
+  favicon: img/Tux.png
+  logo: img/Tux.png
+  palette:
+    primary: blue grey
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+# plugins:
+#   - blog
