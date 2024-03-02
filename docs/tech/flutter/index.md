@@ -18,7 +18,7 @@ comments: true
  
 ![1709376567.png](img/1709376567.png)
 
-"A stateless widget is a widget that's composed of children. Why is
+"A stateless widget is a widget that's composed of children. Which is
 why it has a build method. 💡"
 
 * The element tree then checks if it as any children, and calls the
