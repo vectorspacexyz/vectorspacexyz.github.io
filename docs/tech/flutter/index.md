@@ -2,6 +2,9 @@
 title: Flutter
 comments: true
 ---
+## Stateful Widgets
+
+
 ## Dart classes
 The fields within a dart class are non-nullable unless its stated explicity with
 a `?`. The following code is fine:
@@ -29,6 +32,16 @@ initializer lists comes in:
 ![1707993436.png](img/1707993436.png)
 
 But we've gotta a shorthand for initializer list:
+
+### Upate 2024-03-02 10:24AM
+I no longer think this can be considered an equivalent to initializer list. The
+below code just forces you to create an object of the class specifiying
+arguments, whereas with initializer list you can check whether arguments are
+null (not passed to the constructor) and set them approrpriate values.
+
+![1709356694.png](img/1709356694.png)
+
+Yeah. So I no longer think below is a shorthand for initializer list:
 
 ![1707993690.png](img/1707993690.png)
 
@@ -58,10 +71,4 @@ export PATH="$PATH:$HOME/bin:$HOME/flutter/bin:$HOME/.pub-cache/bin:$HOME/.local
 ## Upgrade
 To upgrade, I just `cd $HOME/flutter` and `flutter upgrade`
 
-## Finding type of a value in dart
-
-source: [https://howtoflutter.dev/how-to-check-type-of-a-variable-in-dart-or-flutter/](https://howtoflutter.dev/how-to-check-type-of-a-variable-in-dart-or-flutter/)
-
-Used filed `runTimeType` of that value to determine its type.
-
-![1709119273.png](img/1709119273.png)
+* [meals app index](meals-app/index.md)
