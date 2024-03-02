@@ -2,8 +2,36 @@
 title: Flutter
 comments: true
 ---
-## Stateful Widgets
+## Stateless Widgets
+[https://www.youtube.com/watch?v=wE7khGHVkYY](https://www.youtube.com/watch?v=wE7khGHVkYY)
 
+![1709375729.png](img/1709375729.png)
+
+* Flutter apps have both an **Element tree** and a **Widget tree**.
+* What we see on the screen is the Element tree. The Widget tree
+  is the blueprint for the element tree.
+* `runApp` takes the widget that's passed to it and makes it the root
+  of the Widget tree.
+* Once the widget is loaded to the root of the widget tree, Flutter
+  framework calls the createElement method. This creates an instance
+  of Element class that's gonna be the root of the element tree.
+ 
+![1709376567.png](img/1709376567.png)
+
+"A stateless widget is a widget that's composed of children. Why is
+why it has a build method. 💡"
+
+* The element tree then checks if it as any children, and calls the
+  `build` method of the widget from which it was created.
+
+Look at the widget-tree and the element-tree for the code below.
+
+![1709381681.png](img/1709381681.png)
+
+![1709381873.png](img/1709381873.png)
+
+The widget at the root of the widget tree is the widget that you
+defined, here `DogApp`.
 
 ## Dart classes
 The fields within a dart class are non-nullable unless its stated explicity with
