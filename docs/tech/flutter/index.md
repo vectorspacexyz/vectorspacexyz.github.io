@@ -2,6 +2,167 @@
 title: Flutter
 comments: true
 ---
+## Stateful Widget
+[https://www.youtube.com/watch?v=AqCMFXEmf3w](https://www.youtube.com/watch?v=AqCMFXEmf3w)
+
+To date (04/03/2024), this is the most insightful videos on flutter I've
+watched. I'll summarize what I've understood with this and the last video on
+Stateless widget.
+
+Firstly, know that widgets that you create in flutter, by extending Stateless or
+Stateful widgets, are immutable configuration files for *Elements*. It is these
+*Elements* that we see on android/ios/linux/windows screen.
+
+Forget flutter specifics for the moment. Imagine you want to display a screen
+that contains message that says: "You pressed this screen $number times". It
+contains 2 fields:
+
+1. The message: "You pressed this $number time"
+2. The number: number
+
+You can model ths with a simple class
+
+```dart
+class Screen {
+  int number = 0;
+  String message = "You pressed this screen 0 times";
+
+  void updateNumber() {
+    number += 1;
+    message = "You pressed this screen $number times";
+  }
+
+  void printOutPut() {
+    print(message);
+  }
+}
+
+void main() {
+  var someScreen = Screen();
+  someScreen.updateNumber();
+  someScreen.updateNumber();
+  someScreen.updateNumber();
+  someScreen.printOutPut();
+}
+```
+
+Its good to think in terms of classes this way. But how do we adapt our thinking
+to work within the flutter framework? Firstly, all the `main()` function should
+have the code `runApp()`.
+
+When we incorprate runApp(), we had to make the following modifications:
+
+![1709535763.png](img/1709535763.png)
+
+For `runApp()` to be legit code, you need to import material.dart. And `runApp`
+expects a widget. So we make Screen extend Stateful widget. At this point
+we note that Stateful widgets, once expanded into the widget tree by runApp
+and then called by the flutter framework to create an Element creates a
+StatefulElement. Stateful Element will refer back to the widget that created
+and as for a State object. This is why classes that extend Stateful widgets
+have a createState method.
+
+Now let's make the required changes to have this display something on the
+screen.
+
+```dart
+import 'package:flutter/material.dart';
+
+class Screen extends StatefulWidget {
+  String message = "You pressed this screen 0 times";
+
+  @override
+  State<StatefulWidget> createState() {
+    return _ScreenState();
+  }
+}
+
+class _ScreenState extends State<Screen> {
+  int number = 0;
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Center(
+      child: Text(
+        "You pressed this screen $number times",
+        style: TextStyle(
+          fontSize: 24,
+        ),
+        textDirection: TextDirection.ltr,
+      ),
+    );
+  }
+}
+
+void main() {
+  // var someScreen = Screen();
+  // someScreen.updateNumber();
+  // someScreen.updateNumber();
+  // someScreen.updateNumber();
+  // someScreen.printOutPut();
+  runApp(Screen());
+}
+```
+Note that I choose to pack the field that changes with the State class. The
+`StatefulElement` that gets loaded into the element tree from from root of the
+widget tree, `Screen`, looks back to `Screen` for a `State` object. The element
+tree hold the State object, which builds a widget to the widget tree, which
+creates it corresponding element in the element tree which again refers back
+to the widget for any children.
+
+Remember how in the previous version of our app that just ran in the terminal
+we put the code that updates the count field in the `main()`. But now the
+context is different. We're inside a flutter app. We can have the flutter
+framework itself execute the necessary code (which we pass as a function),
+
+```dart
+import 'package:flutter/material.dart';
+
+class Screen extends StatefulWidget {
+  String message = "You pressed this screen 0 times";
+
+  @override
+  State<StatefulWidget> createState() {
+    return _ScreenState();
+  }
+}
+
+class _ScreenState extends State<Screen> {
+  int number = 0;
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          number++;
+        });
+      },
+      child: Center(
+        child: Text(
+          "You pressed this screen $number times",
+          style: TextStyle(
+            fontSize: 24,
+          ),
+          textDirection: TextDirection.ltr,
+        ),
+      ),
+    );
+  }
+}
+
+void main() {
+  // var someScreen = Screen();
+  // someScreen.updateNumber();
+  // someScreen.updateNumber();
+  // someScreen.updateNumber();
+  // someScreen.printOutPut();
+  runApp(Screen());
+}
+```
+
+![1709539039.png](img/1709539039.png)
+
 ## Stateless Widgets
 [https://www.youtube.com/watch?v=wE7khGHVkYY](https://www.youtube.com/watch?v=wE7khGHVkYY)
 
