@@ -2,6 +2,44 @@
 title: Flutter
 comments: true
 ---
+## Reading Documentation/LSP Info
+```dart
+(new) Future<String> Future.delayed(Duration duration, [FutureOr<String> Function()? computation])
+```
+
+When looking up dart documentation, you might come across code like above. It
+gives you core info about the `Future.delayed` function :
+
+1. The function is `Future.delayed`
+2. It returns a `Future<String>` value
+3. It *needs* (compulsory) a value of type `Duration` to be passed to it.
+4. Opitionally, you can pass to it a function that returns a `FutureOr<String>`.
+
+## Event Lopps
+[https://www.youtube.com/watch?v=vl_AaCgudcY](https://www.youtube.com/watch?v=vl_AaCgudcY)
+
+Today (05/03/2024), is my second day watching this video. I realize now this
+diagram is an accurate and neat way to visualize an isolate:
+
+![1709614212.png](img/1709614212.png)
+
+to
+
+![1709614359.png](img/1709614359.png)
+
+The animations of that diagram makes a lot of sense too. You see those green
+blocks that light up or switch off, they're representing the memory that's
+allocated to the isolate.
+
+And the arrows that circle around one another is the event loop (obviously).
+The event loop, that *runs* also has its own thread.
+
+Crucial point is that ALL dart code run in an isolate.
+
+"In dart, each thread is in its own isolate, with its own memory and it just
+processes events."
+
+
 ## Stateful Widget
 [https://www.youtube.com/watch?v=AqCMFXEmf3w](https://www.youtube.com/watch?v=AqCMFXEmf3w)
 
