@@ -31,7 +31,7 @@ systemctl --user daemon-reload
 
 systemctl --user start mkdocs.service
 
-systemctl --user enable mkdocs.servicek
+systemctl --user enable mkdocs.service
 ```
 
 
