@@ -2,6 +2,27 @@
 title: Flutter
 comments: true
 ---
+## Event loop vs main() function
+test.dart:
+```dart
+void main() {
+  Future.delayed(Duration(seconds: 5), () { print("But the program ends here."); });
+  print("main function ends here.");
+}
+```
+
+If we look at above code for `test.dart`, we might get the impression that
+with the line `print("main function ends here.")` the little program comes
+to an end. But, there's more to it than what meets the eye.
+
+![1709791293.png](img/1709791293.png)
+
+Even after running the last line of code of the `main` has executed, the program
+keeps running. Why? Because there's something in the event queue. Only after
+the event queue becomes empty, does the program come to an end:
+
+![1709791639.png](img/1709791639.png)
+
 ## async
 You put `async` keyword on functions that will be working with
 a `Future<T>` value. On the line that takes the `Future<T>` value
@@ -100,18 +121,11 @@ loop."
 
 ![1709724007.png](img/1709724007.png)
 
-### Event loop vs main() function
-test.dart:
-```dart
-void main() {
-  Future.delayed(Duration(seconds: 5), () { print("But the program ends here."); });
-  print("main function ends here.");
-}
-```
+## Update: 07/03/2024
 
-If we look at above code for `test.dart`, we might get the impression that
-with the line `print("main function ends here.")` the little program comes
-to an end. But, there's more than meets the eye here.
+Isolate example used in the video:
+
+![1709793041.png](img/1709793041.png)
 
 ## Stateful Widget
 [https://www.youtube.com/watch?v=AqCMFXEmf3w](https://www.youtube.com/watch?v=AqCMFXEmf3w)
