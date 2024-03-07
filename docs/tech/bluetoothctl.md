@@ -276,6 +276,7 @@ rules = [
         }
     }
 ]
+
 ```
 
 ### Try disconnecting and reconnecting.
@@ -283,3 +284,8 @@ rules = [
 Disconnected and reconnected.
 
 ![1709009915.png](img/1709009915.png)
+
+## pavucontrol
+This might be useful. Sound quality is good when profile is A2DP sink.
+
+![1709792657.png](img/1709792657.png)
