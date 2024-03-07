@@ -2,6 +2,56 @@
 title: Flutter
 comments: true
 ---
+## async
+You put `async` keyword on functions that will be working with
+a `Future<T>` value. On the line that takes the `Future<T>` value
+there's going to be the `await` keyword.
+
+## Neat shorthand for functions
+Dart has a neat shorthand for functions whose computation can be contained
+in a single line of code. Example:
+
+```dart
+int someFunc() => 2;
+
+void main() {
+  print(someFunc());
+}
+```
+
+## Visualizing Future<String>
+`Future<String>` or any `Future<T>` is the result of an *asynchronous operation*.
+
+[Quote](https://api.dart.dev/stable/3.3.0/dart-async/Future-class.html): 
+
+  An asynchronous computation cannot provide a result immediately when it is
+  started, unlike a synchronous computation which does compute a result
+  immediately by either returning a value or by throwing. An asynchronous
+  computation may need to wait for something external to the program (reading a
+  file, querying a database, fetching a web page) which takes time. Instead of
+  blocking all computation until the result is available, the asynchronous
+  computation immediately returns a Future which will eventually "complete" with
+  the result.
+
+`Future.delayed(Duration(seconds: 5), () => "Result string")` is a good way
+to visualize a `Future<String>`.
+
+```dart
+void main() async {
+  var result = await someReturn();
+  print("The result of computation is: ${result}");
+}
+
+Future<String> someReturn() {
+  return Future.delayed(Duration(seconds: 5), () => "Result string");
+}
+```
+
+## Synchronous and Asynchrnous
+source: [https://dart.dev/codelabs/async-await](https://dart.dev/codelabs/async-await)
+
+![1709624550.png](img/1709624550.png)
+
 ## Reading Documentation/LSP Info
 ```dart
 (new) Future<String> Future.delayed(Duration duration, [FutureOr<String> Function()? computation])
@@ -15,7 +65,7 @@ gives you core info about the `Future.delayed` function :
 3. It *needs* (compulsory) a value of type `Duration` to be passed to it.
 4. Opitionally, you can pass to it a function that returns a `FutureOr<String>`.
 
-## Event Lopps
+## Isolates and Event Lopps
 [https://www.youtube.com/watch?v=vl_AaCgudcY](https://www.youtube.com/watch?v=vl_AaCgudcY)
 
 Today (05/03/2024), is my second day watching this video. I realize now this
@@ -39,6 +89,29 @@ Crucial point is that ALL dart code run in an isolate.
 "In dart, each thread is in its own isolate, with its own memory and it just
 processes events."
 
+### Update: 06/03/2024
+[00:34](https://youtu.be/vl_AaCgudcY?t=30): "What makes asynchrony possible in dart? Isolates"
+[02:17](https://youtu.be/vl_AaCgudcY?t=137): "What really makes async code
+possible: the Event Loop"
+
+"All of the high level APIs that we're used to for asynchronous programming:
+Futures, Streams, async and await, they're all built on and around this simple
+loop."
+
+![1709724007.png](img/1709724007.png)
+
+### Event loop vs main() function
+test.dart:
+```dart
+void main() {
+  Future.delayed(Duration(seconds: 5), () { print("But the program ends here."); });
+  print("main function ends here.");
+}
+```
+
+If we look at above code for `test.dart`, we might get the impression that
+with the line `print("main function ends here.")` the little program comes
+to an end. But, there's more than meets the eye here.
 
 ## Stateful Widget
 [https://www.youtube.com/watch?v=AqCMFXEmf3w](https://www.youtube.com/watch?v=AqCMFXEmf3w)
