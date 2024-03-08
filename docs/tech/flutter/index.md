@@ -2,6 +2,35 @@
 title: Flutter
 comments: true
 ---
+## Bulding UI with Flutter
+source: [https://docs.flutter.dev/ui](https://docs.flutter.dev/ui)
+
+* Central idea: Build UI out of widgets.
+* Widgets describe what their view should look like given their current
+  configuration and state. When a widget's state changes, the widget rebuilds
+  its descripton, which the framework **diffs** against the previous description
+  in order to determine the minimal changes needed in the underlying render
+  tree to transition from one state to next.
+
+💡 Widgets are descriptions/configurations/blueprints. Note the above point:
+_when a widget's state changes, the widget rebuilds its description, which the
+framework diffs against..._ If you know the diff command in Linux, it literally
+works on text files. Remember that widgets are NOT what's displayed on the
+screen, what gets displayed are elements. There's a distinct widget tree and
+an element tree.
+
+## Result of / is always a floating point type
+```dart
+4 / 2
+2.0
+```
+
+To get a value of type int do:
+```dart
+4 ~/ 2
+2
+```
+
 ## Event loop vs main() function
 test.dart:
 ```dart
@@ -86,7 +115,7 @@ gives you core info about the `Future.delayed` function :
 3. It *needs* (compulsory) a value of type `Duration` to be passed to it.
 4. Opitionally, you can pass to it a function that returns a `FutureOr<String>`.
 
-## Isolates and Event Lopps
+## Isolates and Event Loops
 [https://www.youtube.com/watch?v=vl_AaCgudcY](https://www.youtube.com/watch?v=vl_AaCgudcY)
 
 Today (05/03/2024), is my second day watching this video. I realize now this
@@ -121,7 +150,7 @@ loop."
 
 ![1709724007.png](img/1709724007.png)
 
-## Update: 07/03/2024
+### Update: 07/03/2024
 
 Isolate example used in the video:
 
