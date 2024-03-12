@@ -2,6 +2,286 @@
 title: Flutter
 comments: true
 ---
+## Streams
+source: [https://www.youtube.com/watch?v=nQBpOIHE4eE](https://www.youtube.com/watch?v=nQBpOIHE4eE)
+
+Streams:
+
+* One of the fundamentals of reactive programming
+* Future<Type> -> Asynchrously delivered value(of type Type) or error.
+
+![1710236426.png](img/1710236426.png)
+
+> If you think about the way a single value relates to an iterator of the same
+> type, that's how a future relates to a stream.
+
+> Just like with futures, the key is deciding in advance, here's what to do when
+> a piece of data is ready, when there's an error, and when the stream
+> completes.
+
+## (Attempt) Reading a whole file from command line with dart.
+source: [https://stackoverflow.com/a/28805065](https://stackoverflow.com/a/28805065)
+
+There are shit tonne of youtube videos and other resources talking
+about `stdin.readLineSync` to get input from the user. But what I
+was looking for was how to read a file from stdin. Like so:
+
+```sh
+cat <<EOF | dart run testt.dart
+This is line 1
+This is line 2
+This is line 3
+EOF
+```
+But I found the afforementioned stackoverflow answer in source helpful.
+Tried this, and I got the following error:
+
+```dart
+import 'dart:convert';
+import 'dart:io';
+
+void main() {
+  stdin.echoMode = false;
+  stdin.lineMode = false;
+  var input = <int>[];
+  var subscription;
+  subscription = stdin.listen((List<int> data) {
+    // if (data.contains(4)) {
+    //   print(latin1.decode(data));
+    //   subscription.cancel();
+    // }
+    if (!data.contains(4)) {
+      input.add(data[0]);
+    } else {
+      print(latin1.decode(input));
+      subscription.cancel();
+    }
+  });
+
+  // stdin.echoMode = false;
+  // stdin.lineMode = false;
+  //
+  // var subscription;
+  // subscription = stdin.listen((List<int> data) {
+  //   if (data.contains(4)) {
+  //     print("EOF reached");
+  //     subscription.cancel();
+  //     print(latin1.decode(data));
+  //   }
+  //   // var s = latin1.decode(data);
+  //   // stdout.write(s);
+  //   // else {
+  //   //   var s = latin1.decode(data);
+  //   //   stdout.write(s);
+  //   // }
+  // });
+}
+```
+
+Error:
+
+```sh
+255 vector@resonyze ~ % cat <<EOF | dart run testt.dart
+This is line 1
+This is line 2
+This is line 3
+EOF
+Unhandled exception:
+StdinException: Error setting terminal echo mode, OS Error: Inappropriate ioctl for device, errno = 25
+#0      Stdin.echoMode= (dart:io-patch/stdio_patch.dart:85:7)
+#1      main (file:///home/vector/testt.dart:7:9)
+#2      _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:297:19)
+#3      _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:184:12)
+
+```
+
+
+## Container class
+source: [https://api.flutter.dev/flutter/widgets/Container-class.html](https://api.flutter.dev/flutter/widgets/Container-class.html)
+
+![1710141307.png](img/1710141307.png)
+
+The `height`, and `width` properties of the `Container`, become constraints
+to the child of `Container`.
+
+Note that you don't specify a max height or min height, just height (same
+for width). What this implies is that height argument of Container is both
+max and min, which means the Container basically forces its child widget to
+to the dimensions specified in `height` and `width` argument.
+
+## Constraints
+source: [https://docs.flutter.dev/ui/layout/constraints](https://docs.flutter.dev/ui/layout/constraints)
+
+The widget (colored some shade of white) below is composed of a Column. The
+Column contains 2 childs: FIRST CHILD and SECOND CHILD.
+
+![1710142484.png](img/1710142484.png)
+
+![1710133958.png](img/1710133958.png)
+
+From the above 'negotiation' we see that the parent has given to this widget a
+range of values for height and width from which it can choose (unlike a container
+widget parent where a height and width are passed as arguments). But note that
+before it reports it size, it passes constraints to its child widgets after
+adjusting for padding field.
+
+> Widget: “Hmmm, since | want to have  pixels of padding, then my children can
+  have at most 290 pixels of width and 75 pixels of height.”
+
+Now the child widget (FIRST CHILD) has to pick its dimensions from the range
+provided by constraints. It picks the maximum width available to it: 290. For
+height it picks 20. Remember the maximum height given to it was the size
+available to the parent minus the padding applied (85 - 10 = 75). Now the parent
+has 75 - 20 = 55 left to it. So the second child is left to pick from 0-55 for
+height and 0-290 for width. Now the widget positions the child elements. Now
+since the child widgets have decided their size, the widget reports to its own
+parent that it will have a width of 300 (since one of its child wanted the max)
+and a height of 60, which is the height of its child widgets + padding.
+
+## Default app
+Its worth taking a serious look into the default app created by
+flutter when you run `flutter create someApp`:
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        // This is the theme of your application.
+        //
+        // TRY THIS: Try running your application with "flutter run". You'll see
+        // the application has a purple toolbar. Then, without quitting the app,
+        // try changing the seedColor in the colorScheme below to Colors.green
+        // and then invoke "hot reload" (save your changes or press the "hot
+        // reload" button in a Flutter-supported IDE, or press "r" if you used
+        // the command line to start the app).
+        //
+        // Notice that the counter didn't reset back to zero; the application
+        // state is not lost during the reload. To reset the state, use hot
+        // restart instead.
+        //
+        // This works for code too, not just values: Most code changes can be
+        // tested with just a hot reload.
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+
+  // This widget is the home page of your application. It is stateful, meaning
+  // that it has a State object (defined below) that contains fields that affect
+  // how it looks.
+
+  // This class is the configuration for the state. It holds the values (in this
+  // case the title) provided by the parent (in this case the App widget) and
+  // used by the build method of the State. Fields in a Widget subclass are
+  // always marked "final".
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      // This call to setState tells the Flutter framework that something has
+      // changed in this State, which causes it to rerun the build method below
+      // so that the display can reflect the updated values. If we changed
+      // _counter without calling setState(), then the build method would not be
+      // called again, and so nothing would appear to happen.
+      _counter++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // This method is rerun every time setState is called, for instance as done
+    // by the _incrementCounter method above.
+    //
+    // The Flutter framework has been optimized to make rerunning build methods
+    // fast, so that you can just rebuild anything that needs updating rather
+    // than having to individually change instances of widgets.
+    return Scaffold(
+      appBar: AppBar(
+        // TRY THIS: Try changing the color here to a specific color (to
+        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
+        // change color while the other colors stay the same.
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: Text(widget.title),
+      ),
+      body: Center(
+        // Center is a layout widget. It takes a single child and positions it
+        // in the middle of the parent.
+        child: Column(
+          // Column is also a layout widget. It takes a list of children and
+          // arranges them vertically. By default, it sizes itself to fit its
+          // children horizontally, and tries to be as tall as its parent.
+          //
+          // Column has various properties to control how it sizes itself and
+          // how it positions its children. Here we use mainAxisAlignment to
+          // center the children vertically; the main axis here is the vertical
+          // axis because Columns are vertical (the cross axis would be
+          // horizontal).
+          //
+          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
+          // action in the IDE, or press "p" in the console), to see the
+          // wireframe for each widget.
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text(
+              'You have pushed the button this many times:',
+            ),
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: const Icon(Icons.add),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+```
+
+* `runApp` can take any widget and it will make it the root of the widget tree.
+  But if you're going to design an app with Material design use MaterialApp
+  widget as the root of your app.
+* Note the three arguments of `MaterialApp` here:
+    * `title`
+    * `home`
+    * `theme`
+* Note the three arguments of `Scaffold` here:
+    * `appBar`
+    * `body`
+    * `floatingActionButton`
+
 ## Bulding UI with Flutter
 source: [https://docs.flutter.dev/ui](https://docs.flutter.dev/ui)
 
