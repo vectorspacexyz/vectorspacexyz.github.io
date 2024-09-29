@@ -1,0 +1,1739 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../mkdocs-material/">
+      
+      
+        <link rel="next" href="../mupdf/">
+      
+      
+      <link rel="icon" href="../../img/Tux.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>mpv - vectorspace.xyz</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mpv" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="vectorspace.xyz" class="md-header__button md-logo" aria-label="vectorspace.xyz" data-md-component="logo">
+      
+  <img src="../../img/Tux.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            vectorspace.xyz
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              mpv
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../arch/" class="md-tabs__link">
+          
+  
+  Tech
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="vectorspace.xyz" class="md-nav__button md-logo" aria-label="vectorspace.xyz" data-md-component="logo">
+      
+  <img src="../../img/Tux.png" alt="logo">
+
+    </a>
+    vectorspace.xyz
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Tech
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tech
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    archlinux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    audio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    bash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bluetoothctl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    bluetoothctl
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chromium/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chromium
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ffmpeg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ffmpeg
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fzf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    fzf
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gimp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    gimp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../goaccess/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    goacces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inputrc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    inputrc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../isso/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    isso comment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../makepkg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    makepkg
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs-material/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mkdocs-material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    mpv
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    mpv
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mpv" class="md-nav__link">
+    <span class="md-ellipsis">
+      mpv
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mupdf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mupdf
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../neovim/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    neovim
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nginx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nginx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    patch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../picom/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    picom
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pkgbuild/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PKGBUILD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../printf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    printf
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qxmledit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    qxmledit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rsync/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rsync
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scratchpad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scratchpad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sed
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shadowsocks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    shadowsocks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shell Scripting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../switch-audio-sink/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    switch audio sink
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sxiv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sxiv
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systemd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    systemd
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tail/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    alternative to tee with tail
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tee/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tee
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    test
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../treesitter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Treesitter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ubuntu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ubuntu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ufw/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ufw
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vimwiki/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    vimwiki
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../waydroid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Waydroid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webserver/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    webserver
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wpa_supplicant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    wpa_supplicant
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xbindkeys/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    xbindkeys
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xdg-mime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    xdg-mime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xdg-settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    xdg-settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xmodmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    xmodmap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xpdfrc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    xpdfrc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mpv" class="md-nav__link">
+    <span class="md-ellipsis">
+      mpv
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>mpv</h1>
+
+<h2 id="mpv">mpv</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ctrl+r cycle_values video-rotate &quot;90&quot; &quot;180&quot; &quot;270&quot; &quot;0&quot;
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a># mpv keybindings
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>#
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a># Location of user-defined bindings: ~/.config/mpv/input.conf
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>#
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a># Lines starting with # are comments. Use SHARP to assign the # key.
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a># Copy this file and uncomment and edit the bindings you want to change.
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>#
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a># List of commands and further details: DOCS/man/input.rst
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a># List of special keys: --input-keylist
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a># Keybindings testing mode: mpv --input-test --force-window --idle
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>#
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a># Use &#39;ignore&#39; to unbind a key fully (e.g. &#39;ctrl+a ignore&#39;).
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>#
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a># Strings need to be quoted and escaped:
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>#   KEY show-text &quot;This is a single backslash: \\ and a quote: \&quot; !&quot;
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>#
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a># You can use modifier-key combinations like Shift+Left or Ctrl+Alt+x with
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a># the modifiers Shift, Ctrl, Alt and Meta (may not work on the terminal).
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>#
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a># The default keybindings are hardcoded into the mpv binary.
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a># You can disable them completely with: --no-input-default-bindings
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a># Developer note:
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a># On compilation, this file is baked into the mpv binary, and all lines are
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a># uncommented (unless &#39;#&#39; is followed by a space) - thus this file defines the
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a># default key bindings.
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a># If this is enabled, treat all the following bindings as default.
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>#default-bindings start
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>#MBTN_LEFT     ignore              # don&#39;t do anything
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>#MBTN_LEFT_DBL cycle fullscreen    # toggle fullscreen on/off
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>#MBTN_RIGHT    cycle pause         # toggle pause on/off
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>#MBTN_BACK     playlist-prev
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>#MBTN_FORWARD  playlist-next
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a># Mouse wheels, touchpad or other input devices that have axes
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a># if the input devices supports precise scrolling it will also scale the
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a># numeric value accordingly
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>#WHEEL_UP      seek 10
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>#WHEEL_DOWN    seek -10
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>#WHEEL_LEFT    add volume -2
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>#WHEEL_RIGHT   add volume 2
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>## Seek units are in seconds, but note that these are limited by keyframes
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>#RIGHT seek  5
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>#LEFT  seek -5
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>#UP    seek  60
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>#DOWN  seek -60
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a># Do smaller, always exact (non-keyframe-limited), seeks with shift.
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a># Don&#39;t show them on the OSD (no-osd).
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>Shift+RIGHT no-osd seek  1 exact
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>Shift+LEFT  no-osd seek -1 exact
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>#Shift+UP    no-osd seek  5 exact
+</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>#Shift+DOWN  no-osd seek -5 exact
+</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a># Skip to previous/next subtitle (subject to some restrictions; see manpage)
+</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>#Ctrl+LEFT   no-osd sub-seek -1
+</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>#Ctrl+RIGHT  no-osd sub-seek  1
+</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a># Adjust timing to previous/next subtitle
+</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>#Ctrl+Shift+LEFT sub-step -1
+</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>#Ctrl+Shift+RIGHT sub-step 1
+</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a># Move video rectangle
+</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>#Alt+left  add video-pan-x  0.1
+</span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a>#Alt+right add video-pan-x -0.1
+</span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a>#Alt+up    add video-pan-y  0.1
+</span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a>#Alt+down  add video-pan-y -0.1
+</span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a># Zoom/unzoom video
+</span><span id="__span-0-70"><a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a>#Alt++     add video-zoom   0.1
+</span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a>#Alt+-     add video-zoom  -0.1
+</span><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a># Reset video zoom/pan settings
+</span><span id="__span-0-73"><a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a>#Alt+BS set video-zoom 0 ; set video-pan-x 0 ; set video-pan-y 0
+</span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a>#PGUP add chapter 1                     # skip to next chapter
+</span><span id="__span-0-75"><a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a>#PGDWN add chapter -1                   # skip to previous chapter
+</span><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a>#Shift+PGUP seek 600
+</span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a>#Shift+PGDWN seek -600
+</span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a>#[ multiply speed 1/1.1                 # scale playback speed
+</span><span id="__span-0-79"><a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a>#] multiply speed 1.1
+</span><span id="__span-0-80"><a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a>#{ multiply speed 0.5
+</span><span id="__span-0-81"><a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a>#} multiply speed 2.0
+</span><span id="__span-0-82"><a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a>#BS set speed 1.0                       # reset speed to normal
+</span><span id="__span-0-83"><a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a>#Shift+BS revert-seek                   # undo previous (or marked) seek
+</span><span id="__span-0-84"><a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a>#Shift+Ctrl+BS revert-seek mark         # mark position for revert-seek
+</span><span id="__span-0-85"><a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a>#q quit
+</span><span id="__span-0-86"><a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a>#Q quit-watch-later
+</span><span id="__span-0-87"><a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a>#q {encode} quit 4
+</span><span id="__span-0-88"><a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a>#ESC set fullscreen no
+</span><span id="__span-0-89"><a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a>#ESC {encode} quit 4
+</span><span id="__span-0-90"><a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a>#p cycle pause                          # toggle pause/playback mode
+</span><span id="__span-0-91"><a id="__codelineno-0-91" name="__codelineno-0-91" href="#__codelineno-0-91"></a>#. frame-step                           # advance one frame and pause
+</span><span id="__span-0-92"><a id="__codelineno-0-92" name="__codelineno-0-92" href="#__codelineno-0-92"></a>#, frame-back-step                      # go back by one frame and pause
+</span><span id="__span-0-93"><a id="__codelineno-0-93" name="__codelineno-0-93" href="#__codelineno-0-93"></a>SPACE cycle pause
+</span><span id="__span-0-94"><a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a>n playlist-next                        # skip to next file
+</span><span id="__span-0-95"><a id="__codelineno-0-95" name="__codelineno-0-95" href="#__codelineno-0-95"></a>#ENTER playlist-next                    # skip to next file
+</span><span id="__span-0-96"><a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a>p playlist-prev                        # skip to previous file
+</span><span id="__span-0-97"><a id="__codelineno-0-97" name="__codelineno-0-97" href="#__codelineno-0-97"></a>#O no-osd cycle-values osd-level 3 1    # cycle through OSD mode
+</span><span id="__span-0-98"><a id="__codelineno-0-98" name="__codelineno-0-98" href="#__codelineno-0-98"></a>#o show-progress
+</span><span id="__span-0-99"><a id="__codelineno-0-99" name="__codelineno-0-99" href="#__codelineno-0-99"></a>#P show-progress
+</span><span id="__span-0-100"><a id="__codelineno-0-100" name="__codelineno-0-100" href="#__codelineno-0-100"></a>#i script-binding stats/display-stats
+</span><span id="__span-0-101"><a id="__codelineno-0-101" name="__codelineno-0-101" href="#__codelineno-0-101"></a>#I script-binding stats/display-stats-toggle
+</span><span id="__span-0-102"><a id="__codelineno-0-102" name="__codelineno-0-102" href="#__codelineno-0-102"></a>#` script-binding console/enable
+</span><span id="__span-0-103"><a id="__codelineno-0-103" name="__codelineno-0-103" href="#__codelineno-0-103"></a>#z add sub-delay -0.1                   # subtract 100 ms delay from subs
+</span><span id="__span-0-104"><a id="__codelineno-0-104" name="__codelineno-0-104" href="#__codelineno-0-104"></a>#Z add sub-delay +0.1                   # add
+</span><span id="__span-0-105"><a id="__codelineno-0-105" name="__codelineno-0-105" href="#__codelineno-0-105"></a>#x add sub-delay +0.1                   # same as previous binding (discouraged)
+</span><span id="__span-0-106"><a id="__codelineno-0-106" name="__codelineno-0-106" href="#__codelineno-0-106"></a>#ctrl++ add audio-delay 0.100           # this changes audio/video sync
+</span><span id="__span-0-107"><a id="__codelineno-0-107" name="__codelineno-0-107" href="#__codelineno-0-107"></a>#ctrl+- add audio-delay -0.100
+</span><span id="__span-0-108"><a id="__codelineno-0-108" name="__codelineno-0-108" href="#__codelineno-0-108"></a>#9 add volume -2
+</span><span id="__span-0-109"><a id="__codelineno-0-109" name="__codelineno-0-109" href="#__codelineno-0-109"></a>#/ add volume -2
+</span><span id="__span-0-110"><a id="__codelineno-0-110" name="__codelineno-0-110" href="#__codelineno-0-110"></a>#0 add volume 2
+</span><span id="__span-0-111"><a id="__codelineno-0-111" name="__codelineno-0-111" href="#__codelineno-0-111"></a>#* add volume 2
+</span><span id="__span-0-112"><a id="__codelineno-0-112" name="__codelineno-0-112" href="#__codelineno-0-112"></a>= add volume 5
+</span><span id="__span-0-113"><a id="__codelineno-0-113" name="__codelineno-0-113" href="#__codelineno-0-113"></a>- add volume -5
+</span><span id="__span-0-114"><a id="__codelineno-0-114" name="__codelineno-0-114" href="#__codelineno-0-114"></a>#m cycle mute
+</span><span id="__span-0-115"><a id="__codelineno-0-115" name="__codelineno-0-115" href="#__codelineno-0-115"></a>#1 add contrast -1
+</span><span id="__span-0-116"><a id="__codelineno-0-116" name="__codelineno-0-116" href="#__codelineno-0-116"></a>#2 add contrast 1
+</span><span id="__span-0-117"><a id="__codelineno-0-117" name="__codelineno-0-117" href="#__codelineno-0-117"></a>#3 add brightness -1
+</span><span id="__span-0-118"><a id="__codelineno-0-118" name="__codelineno-0-118" href="#__codelineno-0-118"></a>#4 add brightness 1
+</span><span id="__span-0-119"><a id="__codelineno-0-119" name="__codelineno-0-119" href="#__codelineno-0-119"></a>#5 add gamma -1
+</span><span id="__span-0-120"><a id="__codelineno-0-120" name="__codelineno-0-120" href="#__codelineno-0-120"></a>#6 add gamma 1
+</span><span id="__span-0-121"><a id="__codelineno-0-121" name="__codelineno-0-121" href="#__codelineno-0-121"></a>#7 add saturation -1
+</span><span id="__span-0-122"><a id="__codelineno-0-122" name="__codelineno-0-122" href="#__codelineno-0-122"></a>#8 add saturation 1
+</span><span id="__span-0-123"><a id="__codelineno-0-123" name="__codelineno-0-123" href="#__codelineno-0-123"></a>#Alt+0 set window-scale 0.5
+</span><span id="__span-0-124"><a id="__codelineno-0-124" name="__codelineno-0-124" href="#__codelineno-0-124"></a>#Alt+1 set window-scale 1.0
+</span><span id="__span-0-125"><a id="__codelineno-0-125" name="__codelineno-0-125" href="#__codelineno-0-125"></a>#Alt+2 set window-scale 2.0
+</span><span id="__span-0-126"><a id="__codelineno-0-126" name="__codelineno-0-126" href="#__codelineno-0-126"></a># toggle deinterlacer (automatically inserts or removes required filter)
+</span><span id="__span-0-127"><a id="__codelineno-0-127" name="__codelineno-0-127" href="#__codelineno-0-127"></a>#d cycle deinterlace
+</span><span id="__span-0-128"><a id="__codelineno-0-128" name="__codelineno-0-128" href="#__codelineno-0-128"></a>#r add sub-pos -1                       # move subtitles up
+</span><span id="__span-0-129"><a id="__codelineno-0-129" name="__codelineno-0-129" href="#__codelineno-0-129"></a>#R add sub-pos +1                       #                down
+</span><span id="__span-0-130"><a id="__codelineno-0-130" name="__codelineno-0-130" href="#__codelineno-0-130"></a>#t add sub-pos +1                       # same as previous binding (discouraged)
+</span><span id="__span-0-131"><a id="__codelineno-0-131" name="__codelineno-0-131" href="#__codelineno-0-131"></a>#v cycle sub-visibility
+</span><span id="__span-0-132"><a id="__codelineno-0-132" name="__codelineno-0-132" href="#__codelineno-0-132"></a># stretch SSA/ASS subtitles with anamorphic videos to match historical
+</span><span id="__span-0-133"><a id="__codelineno-0-133" name="__codelineno-0-133" href="#__codelineno-0-133"></a>#V cycle sub-ass-vsfilter-aspect-compat
+</span><span id="__span-0-134"><a id="__codelineno-0-134" name="__codelineno-0-134" href="#__codelineno-0-134"></a># switch between applying no style overrides to SSA/ASS subtitles, and
+</span><span id="__span-0-135"><a id="__codelineno-0-135" name="__codelineno-0-135" href="#__codelineno-0-135"></a># overriding them almost completely with the normal subtitle style
+</span><span id="__span-0-136"><a id="__codelineno-0-136" name="__codelineno-0-136" href="#__codelineno-0-136"></a>#u cycle-values sub-ass-override &quot;force&quot; &quot;no&quot;
+</span><span id="__span-0-137"><a id="__codelineno-0-137" name="__codelineno-0-137" href="#__codelineno-0-137"></a>#j cycle sub                            # cycle through subtitles
+</span><span id="__span-0-138"><a id="__codelineno-0-138" name="__codelineno-0-138" href="#__codelineno-0-138"></a>#J cycle sub down                       # ...backwards
+</span><span id="__span-0-139"><a id="__codelineno-0-139" name="__codelineno-0-139" href="#__codelineno-0-139"></a>#SHARP cycle audio                      # switch audio streams
+</span><span id="__span-0-140"><a id="__codelineno-0-140" name="__codelineno-0-140" href="#__codelineno-0-140"></a>#_ cycle video
+</span><span id="__span-0-141"><a id="__codelineno-0-141" name="__codelineno-0-141" href="#__codelineno-0-141"></a>#T cycle ontop                          # toggle video window ontop of other windows
+</span><span id="__span-0-142"><a id="__codelineno-0-142" name="__codelineno-0-142" href="#__codelineno-0-142"></a>#f cycle fullscreen                     # toggle fullscreen
+</span><span id="__span-0-143"><a id="__codelineno-0-143" name="__codelineno-0-143" href="#__codelineno-0-143"></a>#s screenshot                           # take a screenshot
+</span><span id="__span-0-144"><a id="__codelineno-0-144" name="__codelineno-0-144" href="#__codelineno-0-144"></a>#S screenshot video                     # ...without subtitles
+</span><span id="__span-0-145"><a id="__codelineno-0-145" name="__codelineno-0-145" href="#__codelineno-0-145"></a>#Ctrl+s screenshot window               # ...with subtitles and OSD, and scaled
+</span><span id="__span-0-146"><a id="__codelineno-0-146" name="__codelineno-0-146" href="#__codelineno-0-146"></a>#Alt+s screenshot each-frame            # automatically screenshot every frame
+</span><span id="__span-0-147"><a id="__codelineno-0-147" name="__codelineno-0-147" href="#__codelineno-0-147"></a>#w add panscan -0.1                     # zoom out with -panscan 0 -fs
+</span><span id="__span-0-148"><a id="__codelineno-0-148" name="__codelineno-0-148" href="#__codelineno-0-148"></a>#W add panscan +0.1                     #      in
+</span><span id="__span-0-149"><a id="__codelineno-0-149" name="__codelineno-0-149" href="#__codelineno-0-149"></a>#e add panscan +0.1                     # same as previous binding (discouraged)
+</span><span id="__span-0-150"><a id="__codelineno-0-150" name="__codelineno-0-150" href="#__codelineno-0-150"></a># cycle video aspect ratios; &quot;-1&quot; is the container aspect
+</span><span id="__span-0-151"><a id="__codelineno-0-151" name="__codelineno-0-151" href="#__codelineno-0-151"></a>#A cycle-values video-aspect-override &quot;16:9&quot; &quot;4:3&quot; &quot;2.35:1&quot; &quot;-1&quot;
+</span><span id="__span-0-152"><a id="__codelineno-0-152" name="__codelineno-0-152" href="#__codelineno-0-152"></a>#POWER quit
+</span><span id="__span-0-153"><a id="__codelineno-0-153" name="__codelineno-0-153" href="#__codelineno-0-153"></a>#PLAY cycle pause
+</span><span id="__span-0-154"><a id="__codelineno-0-154" name="__codelineno-0-154" href="#__codelineno-0-154"></a>#PAUSE cycle pause
+</span><span id="__span-0-155"><a id="__codelineno-0-155" name="__codelineno-0-155" href="#__codelineno-0-155"></a>#PLAYPAUSE cycle pause
+</span><span id="__span-0-156"><a id="__codelineno-0-156" name="__codelineno-0-156" href="#__codelineno-0-156"></a>#PLAYONLY set pause no
+</span><span id="__span-0-157"><a id="__codelineno-0-157" name="__codelineno-0-157" href="#__codelineno-0-157"></a>#PAUSEONLY set pause yes
+</span><span id="__span-0-158"><a id="__codelineno-0-158" name="__codelineno-0-158" href="#__codelineno-0-158"></a>#STOP quit
+</span><span id="__span-0-159"><a id="__codelineno-0-159" name="__codelineno-0-159" href="#__codelineno-0-159"></a>#FORWARD seek 60
+</span><span id="__span-0-160"><a id="__codelineno-0-160" name="__codelineno-0-160" href="#__codelineno-0-160"></a>#REWIND seek -60
+</span><span id="__span-0-161"><a id="__codelineno-0-161" name="__codelineno-0-161" href="#__codelineno-0-161"></a>#NEXT playlist-next
+</span><span id="__span-0-162"><a id="__codelineno-0-162" name="__codelineno-0-162" href="#__codelineno-0-162"></a>#PREV playlist-prev
+</span><span id="__span-0-163"><a id="__codelineno-0-163" name="__codelineno-0-163" href="#__codelineno-0-163"></a>#VOLUME_UP add volume 2
+</span><span id="__span-0-164"><a id="__codelineno-0-164" name="__codelineno-0-164" href="#__codelineno-0-164"></a>#VOLUME_DOWN add volume -2
+</span><span id="__span-0-165"><a id="__codelineno-0-165" name="__codelineno-0-165" href="#__codelineno-0-165"></a>#MUTE cycle mute
+</span><span id="__span-0-166"><a id="__codelineno-0-166" name="__codelineno-0-166" href="#__codelineno-0-166"></a>#CLOSE_WIN quit
+</span><span id="__span-0-167"><a id="__codelineno-0-167" name="__codelineno-0-167" href="#__codelineno-0-167"></a>#CLOSE_WIN {encode} quit 4
+</span><span id="__span-0-168"><a id="__codelineno-0-168" name="__codelineno-0-168" href="#__codelineno-0-168"></a>#ctrl+w quit
+</span><span id="__span-0-169"><a id="__codelineno-0-169" name="__codelineno-0-169" href="#__codelineno-0-169"></a>#E cycle edition                        # next edition
+</span><span id="__span-0-170"><a id="__codelineno-0-170" name="__codelineno-0-170" href="#__codelineno-0-170"></a>#l ab-loop                              # Set/clear A-B loop points
+</span><span id="__span-0-171"><a id="__codelineno-0-171" name="__codelineno-0-171" href="#__codelineno-0-171"></a>l cycle-values loop-playlist &quot;inf&quot; &quot;no&quot;    # toggle infinite looping
+</span><span id="__span-0-172"><a id="__codelineno-0-172" name="__codelineno-0-172" href="#__codelineno-0-172"></a>L cycle-values loop-file &quot;inf&quot; &quot;no&quot;    # toggle infinite looping
+</span><span id="__span-0-173"><a id="__codelineno-0-173" name="__codelineno-0-173" href="#__codelineno-0-173"></a>#ctrl+c quit 4
+</span><span id="__span-0-174"><a id="__codelineno-0-174" name="__codelineno-0-174" href="#__codelineno-0-174"></a>#DEL script-binding osc/visibility      # cycle OSC display
+</span><span id="__span-0-175"><a id="__codelineno-0-175" name="__codelineno-0-175" href="#__codelineno-0-175"></a>#ctrl+h cycle-values hwdec &quot;auto&quot; &quot;no&quot;  # cycle hardware decoding
+</span><span id="__span-0-176"><a id="__codelineno-0-176" name="__codelineno-0-176" href="#__codelineno-0-176"></a>#F8 show_text ${playlist}               # show playlist
+</span><span id="__span-0-177"><a id="__codelineno-0-177" name="__codelineno-0-177" href="#__codelineno-0-177"></a>#F9 show_text ${track-list}             # show list of audio/sub streams
+</span><span id="__span-0-178"><a id="__codelineno-0-178" name="__codelineno-0-178" href="#__codelineno-0-178"></a>
+</span><span id="__span-0-179"><a id="__codelineno-0-179" name="__codelineno-0-179" href="#__codelineno-0-179"></a>#
+</span><span id="__span-0-180"><a id="__codelineno-0-180" name="__codelineno-0-180" href="#__codelineno-0-180"></a># Legacy bindings (may or may not be removed in the future)
+</span><span id="__span-0-181"><a id="__codelineno-0-181" name="__codelineno-0-181" href="#__codelineno-0-181"></a>#
+</span><span id="__span-0-182"><a id="__codelineno-0-182" name="__codelineno-0-182" href="#__codelineno-0-182"></a>#! add chapter -1                       # skip to previous chapter
+</span><span id="__span-0-183"><a id="__codelineno-0-183" name="__codelineno-0-183" href="#__codelineno-0-183"></a>#@ add chapter 1                        #         next
+</span><span id="__span-0-184"><a id="__codelineno-0-184" name="__codelineno-0-184" href="#__codelineno-0-184"></a>
+</span><span id="__span-0-185"><a id="__codelineno-0-185" name="__codelineno-0-185" href="#__codelineno-0-185"></a>#
+</span><span id="__span-0-186"><a id="__codelineno-0-186" name="__codelineno-0-186" href="#__codelineno-0-186"></a># Not assigned by default
+</span><span id="__span-0-187"><a id="__codelineno-0-187" name="__codelineno-0-187" href="#__codelineno-0-187"></a># (not an exhaustive list of unbound commands)
+</span><span id="__span-0-188"><a id="__codelineno-0-188" name="__codelineno-0-188" href="#__codelineno-0-188"></a>#
+</span><span id="__span-0-189"><a id="__codelineno-0-189" name="__codelineno-0-189" href="#__codelineno-0-189"></a>
+</span><span id="__span-0-190"><a id="__codelineno-0-190" name="__codelineno-0-190" href="#__codelineno-0-190"></a># ? add sub-scale +0.1                  # increase subtitle font size
+</span><span id="__span-0-191"><a id="__codelineno-0-191" name="__codelineno-0-191" href="#__codelineno-0-191"></a># ? add sub-scale -0.1                  # decrease subtitle font size
+</span><span id="__span-0-192"><a id="__codelineno-0-192" name="__codelineno-0-192" href="#__codelineno-0-192"></a># ? cycle angle                         # switch DVD/Bluray angle
+</span><span id="__span-0-193"><a id="__codelineno-0-193" name="__codelineno-0-193" href="#__codelineno-0-193"></a># ? cycle sub-forced-only               # toggle DVD forced subs
+</span><span id="__span-0-194"><a id="__codelineno-0-194" name="__codelineno-0-194" href="#__codelineno-0-194"></a># ? cycle program                       # cycle transport stream programs
+</span><span id="__span-0-195"><a id="__codelineno-0-195" name="__codelineno-0-195" href="#__codelineno-0-195"></a># ? stop                                # stop playback (quit or enter idle mode)
+</span></code></pre></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+  
+
+
+
+  <!-- replace disqus with isso -->
+  <br>
+  <h2 id="__comments">Comments</h2>
+  <div id="disqus_thread"></div>
+  <script 
+    data-isso="https://isso.vectorspace.xyz/" 
+    data-isso-css="true" 
+    data-isso-require-author="true" 
+    data-isso-require-email="true" 
+    data-isso-reply-to-self="false"
+    src="https://isso.vectorspace.xyz/js/embed.min.js">
+  </script>
+
+<section id="isso-thread"></section>
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/vectorspacexyz" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/vectorspacexyz" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>

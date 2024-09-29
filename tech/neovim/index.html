@@ -1,0 +1,2316 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../mupdf/">
+      
+      
+        <link rel="next" href="../nginx/">
+      
+      
+      <link rel="icon" href="../../img/Tux.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>neovim - vectorspace.xyz</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tabs-vs-spaces" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="vectorspace.xyz" class="md-header__button md-logo" aria-label="vectorspace.xyz" data-md-component="logo">
+      
+  <img src="../../img/Tux.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            vectorspace.xyz
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              neovim
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../arch/" class="md-tabs__link">
+          
+  
+  Tech
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="vectorspace.xyz" class="md-nav__button md-logo" aria-label="vectorspace.xyz" data-md-component="logo">
+      
+  <img src="../../img/Tux.png" alt="logo">
+
+    </a>
+    vectorspace.xyz
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Tech
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tech
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    archlinux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    audio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    bash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bluetoothctl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    bluetoothctl
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chromium/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chromium
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ffmpeg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ffmpeg
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fzf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    fzf
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gimp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    gimp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../goaccess/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    goacces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inputrc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    inputrc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../isso/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    isso comment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../makepkg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    makepkg
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs-material/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mkdocs-material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mpv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mpv
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mupdf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mupdf
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    neovim
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    neovim
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tabs-vs-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      tabs vs spaces :)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#folding-dartflutter-code-with-treesitter-in-neovim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Folding dart/flutter code with treesitter in neovim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-to-use-shipwright-to-export-lushnvim-themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps to use shipwright to export lush.nvim themes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps to use shipwright to export lush.nvim themes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#i-install-shipwright" class="md-nav__link">
+    <span class="md-ellipsis">
+      I) Install shipwright
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-files-shipwright_buildlua-and-colorsvectorspacexyzlua" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create files shipwright_build.lua and colors/vectorspacexyz.lua
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#need-for-augroups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Need for augroups
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lsp-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      LSP Request
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-lsp-without-nvim-lspconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using LSP without nvim lspconfig
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-packages-without-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing packages without package manager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing packages without package manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eg-treesitter-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eg: Treesitter installation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-tw80-for-markdown-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      set tw=80 for markdown files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autocommands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autocommands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots-to-markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      Screenshots to markdown
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scripting-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scripting workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-treesitter-root" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting treesitter root
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual range
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dealing-with-visual-ranges-incomplete" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dealing with visual ranges (incomplete)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nginx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nginx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    patch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../picom/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    picom
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pkgbuild/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PKGBUILD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../printf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    printf
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qxmledit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    qxmledit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rsync/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rsync
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scratchpad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scratchpad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sed
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shadowsocks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    shadowsocks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shell Scripting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../switch-audio-sink/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    switch audio sink
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sxiv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sxiv
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systemd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    systemd
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tail/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    alternative to tee with tail
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tee/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tee
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    test
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../treesitter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Treesitter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ubuntu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ubuntu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ufw/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ufw
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vimwiki/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    vimwiki
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../waydroid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Waydroid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webserver/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    webserver
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wpa_supplicant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    wpa_supplicant
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xbindkeys/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    xbindkeys
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xdg-mime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    xdg-mime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xdg-settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    xdg-settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xmodmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    xmodmap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xpdfrc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    xpdfrc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tabs-vs-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      tabs vs spaces :)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#folding-dartflutter-code-with-treesitter-in-neovim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Folding dart/flutter code with treesitter in neovim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-to-use-shipwright-to-export-lushnvim-themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps to use shipwright to export lush.nvim themes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps to use shipwright to export lush.nvim themes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#i-install-shipwright" class="md-nav__link">
+    <span class="md-ellipsis">
+      I) Install shipwright
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-files-shipwright_buildlua-and-colorsvectorspacexyzlua" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create files shipwright_build.lua and colors/vectorspacexyz.lua
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#need-for-augroups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Need for augroups
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lsp-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      LSP Request
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-lsp-without-nvim-lspconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using LSP without nvim lspconfig
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-packages-without-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing packages without package manager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing packages without package manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eg-treesitter-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eg: Treesitter installation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-tw80-for-markdown-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      set tw=80 for markdown files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autocommands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autocommands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots-to-markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      Screenshots to markdown
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scripting-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scripting workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-treesitter-root" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting treesitter root
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual range
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dealing-with-visual-ranges-incomplete" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dealing with visual ranges (incomplete)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>neovim</h1>
+
+<h2 id="tabs-vs-spaces">tabs vs spaces :)</h2>
+<p>Tabs Reasoning: Tabs are for indentation. The editor decides how a tab
+character is displayed. I find 3 spaces to be most visually apprpriate.</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">-- Insert tabs but they appear like 3 spaces</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">vim</span><span class="p">.</span><span class="n">opt</span><span class="p">.</span><span class="n">expandtab</span> <span class="o">=</span> <span class="kc">false</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">vim</span><span class="p">.</span><span class="n">opt</span><span class="p">.</span><span class="n">tabstop</span> <span class="o">=</span> <span class="mi">3</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">vim</span><span class="p">.</span><span class="n">opt</span><span class="p">.</span><span class="n">shiftwidth</span> <span class="o">=</span> <span class="mi">3</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">vim</span><span class="p">.</span><span class="n">opt</span><span class="p">.</span><span class="n">softtabstop</span> <span class="o">=</span> <span class="mi">3</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">vim</span><span class="p">.</span><span class="n">opt</span><span class="p">.</span><span class="n">list</span> <span class="o">=</span> <span class="kc">true</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">vim</span><span class="p">.</span><span class="n">opt</span><span class="p">.</span><span class="n">listchars</span> <span class="o">=</span> <span class="s2">&quot;tab:» ,eol:↲,nbsp:+,trail:-&quot;</span>
+</span></code></pre></div>
+<p>Spaces reasoning: What you see is what it is: if indentation has 3 spaces, its
+3 spaces. If its 8 its a tab. We only use spaces. So when we press 'Tab' for
+indent, we want spaces to be inserted as opposed to a tab character.</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">-- The representation of a tab in spaces (or more precisely, columns)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">vim</span><span class="p">.</span><span class="n">opt</span><span class="p">.</span><span class="n">tabstop</span> <span class="o">=</span> <span class="mi">8</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">vim</span><span class="p">.</span><span class="n">opt</span><span class="p">.</span><span class="n">shiftwidth</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">-- When enabled uses spaces instead of tab characters</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">vim</span><span class="p">.</span><span class="n">opt</span><span class="p">.</span><span class="n">expandtab</span> <span class="o">=</span> <span class="kc">true</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">vim</span><span class="p">.</span><span class="n">opt</span><span class="p">.</span><span class="n">softtabstop</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">vim</span><span class="p">.</span><span class="n">optpt</span><span class="p">.</span><span class="n">list</span> <span class="o">=</span> <span class="kc">true</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">vim</span><span class="p">.</span><span class="n">opt</span><span class="p">.</span><span class="n">listchars</span> <span class="o">=</span> <span class="s2">&quot;tab:» ,eol:↲,nbsp:+,trail:-&quot;</span>
+</span></code></pre></div>
+<h2 id="folding-dartflutter-code-with-treesitter-in-neovim">Folding dart/flutter code with treesitter in neovim</h2>
+<p><img alt="1726148391.png" src="../img/1726148391.png" /></p>
+<p>Using <code>:InspectTree</code> I see that the nodes I want folded are <code>selector</code>, <code>named_argument</code>
+and <code>list_literal</code>.</p>
+<p>In the code below, I bind the function that folds to <code>&lt;C-f&gt;</code> or Ctrl + f.</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">local</span> <span class="n">fold_named_arg_func</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  <span class="kd">local</span> <span class="n">allowed_types</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="p">[</span><span class="s2">&quot;selector&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="p">[</span><span class="s2">&quot;named_argument&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="p">[</span><span class="s2">&quot;list_literal&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  <span class="p">}</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  <span class="kd">local</span> <span class="n">ts_utils</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;nvim-treesitter.ts_utils&#39;</span><span class="p">)</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>  <span class="kd">local</span> <span class="n">winid</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">bufwinid</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  <span class="kd">local</span> <span class="n">nuc</span> <span class="o">=</span> <span class="n">ts_utils</span><span class="p">.</span><span class="n">get_node_at_cursor</span><span class="p">(</span><span class="n">winid</span><span class="p">)</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>  <span class="kd">local</span> <span class="n">cn</span> <span class="o">=</span> <span class="n">nuc</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>  <span class="kr">while</span> <span class="n">cn</span> <span class="o">~=</span> <span class="kc">nil</span> <span class="ow">and</span> <span class="n">allowed_types</span><span class="p">[</span><span class="n">cn</span><span class="p">:</span><span class="nb">type</span><span class="p">()]</span> <span class="o">==</span> <span class="kc">nil</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>  <span class="kr">do</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>      <span class="n">cn</span> <span class="o">=</span> <span class="n">cn</span><span class="p">:</span><span class="n">parent</span><span class="p">()</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>  <span class="kr">end</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>  <span class="kd">local</span> <span class="n">start_row</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>  <span class="kd">local</span> <span class="n">end_row</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>  <span class="kr">if</span> <span class="n">cn</span> <span class="o">~=</span><span class="kc">nil</span> <span class="kr">then</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>    <span class="n">start_row</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">end_row</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">cn</span><span class="p">:</span><span class="n">range</span><span class="p">()</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">cmd</span><span class="p">(</span><span class="n">start_row</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">..</span> <span class="s2">&quot;,&quot;</span> <span class="o">..</span> <span class="n">end_row</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">..</span> <span class="s2">&quot;fold&quot;</span><span class="p">)</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>  <span class="kr">end</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="kr">end</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="n">vim</span><span class="p">.</span><span class="n">keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;C-f&gt;&#39;</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>  <span class="kd">local</span> <span class="n">fold_level</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">foldlevel</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>  <span class="kd">local</span> <span class="n">fold_closed</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">foldclosed</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>  <span class="kr">if</span> <span class="n">fold_level</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="kr">then</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>    <span class="kr">if</span> <span class="n">fold_closed</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="kr">then</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>      <span class="n">fold_named_arg_func</span><span class="p">()</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>    <span class="kr">else</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>      <span class="n">vim</span><span class="p">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;foldopen&quot;</span><span class="p">)</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>    <span class="kr">end</span>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>  <span class="kr">else</span>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>    <span class="n">fold_named_arg_func</span><span class="p">()</span>
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>  <span class="kr">end</span>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<p>In conjunction to the above, I also modded how folds appear in neovim because
+the default implementation didn't preserve code indendation.</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">vim</span><span class="p">.</span><span class="n">opt</span><span class="p">.</span><span class="n">fillchars</span> <span class="o">=</span> <span class="p">{</span> <span class="n">eob</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">fold</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span> <span class="p">}</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">vim</span><span class="p">.</span><span class="n">opt</span><span class="p">.</span><span class="n">foldtext</span> <span class="o">=</span> <span class="s1">&#39;v:lua.MyFoldText()&#39;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kr">function</span> <span class="nf">MyFoldText</span><span class="p">()</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  <span class="kd">local</span> <span class="n">start_line</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">getline</span><span class="p">(</span><span class="n">vim</span><span class="p">.</span><span class="n">v</span><span class="p">.</span><span class="n">foldstart</span><span class="p">)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  <span class="kd">local</span> <span class="n">end_line</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">getline</span><span class="p">(</span><span class="n">vim</span><span class="p">.</span><span class="n">v</span><span class="p">.</span><span class="n">foldend</span><span class="p">)</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  <span class="n">end_line</span> <span class="o">=</span> <span class="n">end_line</span><span class="p">:</span><span class="n">gsub</span><span class="p">(</span><span class="s2">&quot;^%s+&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  <span class="kr">return</span> <span class="n">start_line</span> <span class="o">..</span> <span class="s2">&quot; ... &quot;</span> <span class="o">..</span> <span class="n">end_line</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="kr">end</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="n">vim</span><span class="p">.</span><span class="n">keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;C-f&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;:fold&lt;CR&gt;&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="n">desc</span> <span class="o">=</span> <span class="s2">&quot;fold&quot;</span> <span class="p">})</span>
+</span></code></pre></div>
+<p>Alternatively (what I do now), is to fold all nodes. If the node isn't multiline,
+fold its parent instead.</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">local</span> <span class="n">fold_node</span> <span class="o">=</span> <span class="kr">function</span> <span class="p">()</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  <span class="kd">local</span> <span class="n">ts_utils</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">&#39;nvim-treesitter.ts_utils&#39;</span><span class="p">)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  <span class="kd">local</span> <span class="n">cn</span> <span class="o">=</span> <span class="n">ts_utils</span><span class="p">.</span><span class="n">get_node_at_cursor</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  <span class="kr">while</span> <span class="n">cn</span> <span class="o">~=</span> <span class="kc">nil</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>  <span class="kr">do</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="kd">local</span> <span class="n">node_start_row</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">node_end_row</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">cn</span><span class="p">:</span><span class="n">range</span><span class="p">()</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="kr">if</span> <span class="n">node_end_row</span> <span class="o">==</span> <span class="n">node_start_row</span> <span class="kr">then</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>      <span class="n">cn</span> <span class="o">=</span> <span class="n">cn</span><span class="p">:</span><span class="n">parent</span><span class="p">()</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="kr">else</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>      <span class="n">vim</span><span class="p">.</span><span class="n">cmd</span><span class="p">(</span><span class="n">node_start_row</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">..</span> <span class="s2">&quot;,&quot;</span> <span class="o">..</span> <span class="n">node_end_row</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">..</span> <span class="s2">&quot;fold&quot;</span><span class="p">)</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>      <span class="kr">break</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="kr">end</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>  <span class="kr">end</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="kr">end</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="n">vim</span><span class="p">.</span><span class="n">keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;C-f&gt;&#39;</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>  <span class="kd">local</span> <span class="n">fold_level</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">foldlevel</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>  <span class="kd">local</span> <span class="n">fold_closed</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">foldclosed</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>  <span class="kr">if</span> <span class="n">fold_level</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="kr">then</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>    <span class="kr">if</span> <span class="n">fold_closed</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="kr">then</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>      <span class="c1">-- fold_named_arg_func()</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>      <span class="n">fold_node</span><span class="p">()</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>    <span class="kr">else</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>      <span class="n">vim</span><span class="p">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;foldopen&quot;</span><span class="p">)</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>    <span class="kr">end</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>  <span class="kr">else</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>    <span class="c1">-- fold_named_arg_func()</span>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>    <span class="n">fold_node</span><span class="p">()</span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>  <span class="kr">end</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="steps-to-use-shipwright-to-export-lushnvim-themes">Steps to use shipwright to export lush.nvim themes</h2>
+<p>source: <a href="https://github.com/rktjmp/lush.nvim/blob/main/BUILD.md#exporting-a-colorscheme-to-configurable-lua">https://github.com/rktjmp/lush.nvim/blob/main/BUILD.md#exporting-a-colorscheme-to-configurable-lua</a></p>
+<h3 id="i-install-shipwright">I) Install shipwright</h3>
+<p>Since I don't use a package manager..</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">cd</span><span class="w"> </span>~/.config/nvim/pack/colorschemes/start
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>git<span class="w"> </span>clone<span class="w"> </span><span class="s1">&#39;https://github.com/rktjmp/shipwright.nvim.git&#39;</span>
+</span></code></pre></div>
+<h2 id="create-files-shipwright_buildlua-and-colorsvectorspacexyzlua">Create files shipwright_build.lua and colors/vectorspacexyz.lua</h2>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>touch<span class="w"> </span>~/.config/nvim/pack/colorschemes/start/shipwright.nvim/lua/shipwright_build.lua
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>mkdir<span class="w"> </span>~/.config/nvim/pack/colorschemes/start/shipwright.nvim/lua/colors
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>touch<span class="w"> </span>~/.config/nvim/pack/colorschemes/start/shipwright.nvim/lua/colors/vectorspacexyz.lua
+</span></code></pre></div>
+<p>shipwright_build.lua:
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">local</span> <span class="n">colorscheme</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">&quot;lush_theme.vector&quot;</span><span class="p">)</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kd">local</span> <span class="n">lushwright</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">&quot;shipwright.transform.lush&quot;</span><span class="p">)</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">run</span><span class="p">(</span><span class="n">colorscheme</span><span class="p">,</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>  <span class="n">lushwright</span><span class="p">.</span><span class="n">to_lua</span><span class="p">,</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>  <span class="p">{</span><span class="n">patchwrite</span><span class="p">,</span> <span class="s2">&quot;colors/vectorspacexyz.lua&quot;</span><span class="p">,</span> <span class="s2">&quot;-- PATCH_OPEN&quot;</span><span class="p">,</span> <span class="s2">&quot;-- PATCH_CLOSE&quot;</span><span class="p">})</span>
+</span></code></pre></div></p>
+<p>How did you get "lush_theme.vector" here? vector.lua is the name of the file that contains
+highlight definitions in my lush colorscheme project:</p>
+<p><img alt="1724051578.png" src="../img/1724051578.png" /></p>
+<p>vectorspacexyz.lua:</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">-- colors/colorscheme.lua</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kd">local</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1">-- content here will not be touched</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="c1">-- PATCH_OPEN</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="c1">-- group data will be inserted here</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1">-- PATCH_CLOSE</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="c1">-- content here will not be touched</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="p">}</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="c1">-- colorschemes generally want to do this</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="n">vim</span><span class="p">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;highlight clear&quot;</span><span class="p">)</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="n">vim</span><span class="p">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;set t_Co=256&quot;</span><span class="p">)</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="n">vim</span><span class="p">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;let g:colors_name=&#39;my_theme&#39;&quot;</span><span class="p">)</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="c1">-- apply highlight groups</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="kr">for</span> <span class="n">group</span><span class="p">,</span> <span class="n">attrs</span> <span class="kr">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span> <span class="kr">do</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>  <span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_set_hl</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">attrs</span><span class="p">)</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="kr">end</span>
+</span></code></pre></div>
+<p>Now open the file <code>~/.config/nvim/pack/colorschemes/start/shipwright.nvim/lua/shipwright_build.lua</code>
+and run Shipwright</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>:Shipwright
+</span></code></pre></div>
+<h2 id="need-for-augroups">Need for augroups</h2>
+<p><img alt="1721114553.png" src="../img/1721114553.png" /></p>
+<p>In lua, you'd need to use <code>{ clear = true, }</code></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">local</span> <span class="n">lspautocmds</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_create_augroup</span><span class="p">(</span><span class="s1">&#39;LSPAutoCmds&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="n">clear</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="p">})</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_create_autocmd</span><span class="p">(</span><span class="s2">&quot;LspAttach&quot;</span><span class="p">,</span> <span class="p">{</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>  <span class="n">group</span> <span class="o">=</span> <span class="n">lspautocmds</span><span class="p">,</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>  <span class="n">callback</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="kd">local</span> <span class="n">bufnr</span> <span class="o">=</span> <span class="n">args</span><span class="p">.</span><span class="n">buf</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    <span class="kd">local</span> <span class="n">client</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">lsp</span><span class="p">.</span><span class="n">get_client_by_id</span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">client_id</span><span class="p">)</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;gd&#39;</span><span class="p">,</span> <span class="n">vim</span><span class="p">.</span><span class="n">lsp</span><span class="p">.</span><span class="n">buf</span><span class="p">.</span><span class="n">definition</span><span class="p">,</span> <span class="p">{</span> <span class="n">buffer</span> <span class="o">=</span> <span class="n">bufnr</span><span class="p">,</span> <span class="n">desc</span> <span class="o">=</span> <span class="s1">&#39;[G]o to [D]efinition&#39;</span> <span class="p">})</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;gD&#39;</span><span class="p">,</span> <span class="n">vim</span><span class="p">.</span><span class="n">lsp</span><span class="p">.</span><span class="n">buf</span><span class="p">.</span><span class="n">declaration</span><span class="p">,</span> <span class="p">{</span> <span class="n">buffer</span> <span class="o">=</span> <span class="n">bufnr</span><span class="p">,</span> <span class="n">desc</span> <span class="o">=</span> <span class="s1">&#39;[G]o to [D]eclaration&#39;</span> <span class="p">})</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;Leader&gt;ca&#39;</span><span class="p">,</span> <span class="n">vim</span><span class="p">.</span><span class="n">lsp</span><span class="p">.</span><span class="n">buf</span><span class="p">.</span><span class="n">code_action</span><span class="p">,</span> <span class="p">{</span> <span class="n">buffer</span> <span class="o">=</span> <span class="n">bufnr</span><span class="p">,</span> <span class="n">desc</span> <span class="o">=</span> <span class="s1">&#39;[C]ode [A]ction&#39;</span> <span class="p">})</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;Leader&gt;rn&#39;</span><span class="p">,</span> <span class="n">vim</span><span class="p">.</span><span class="n">lsp</span><span class="p">.</span><span class="n">buf</span><span class="p">.</span><span class="n">rename</span><span class="p">,</span> <span class="p">{</span> <span class="n">buffer</span> <span class="o">=</span> <span class="n">bufnr</span><span class="p">,</span> <span class="n">desc</span> <span class="o">=</span> <span class="s1">&#39;[R]e[n]ame&#39;</span> <span class="p">})</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="n">vim</span><span class="p">.</span><span class="n">lsp</span><span class="p">.</span><span class="n">buf</span><span class="p">.</span><span class="n">hover</span><span class="p">,</span> <span class="p">{</span> <span class="n">buffer</span> <span class="o">=</span> <span class="n">bufnr</span><span class="p">,</span> <span class="n">desc</span> <span class="o">=</span> <span class="s1">&#39;Hover Documentation&#39;</span> <span class="p">})</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_buf_create_user_command</span><span class="p">(</span><span class="n">bufnr</span><span class="p">,</span> <span class="s1">&#39;Format&#39;</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">_</span><span class="p">)</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>      <span class="n">vim</span><span class="p">.</span><span class="n">lsp</span><span class="p">.</span><span class="n">buf</span><span class="p">.</span><span class="n">format</span><span class="p">()</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>    <span class="kr">end</span><span class="p">,</span> <span class="p">{</span> <span class="n">desc</span> <span class="o">=</span> <span class="s1">&#39;Format current buffer with LSP&#39;</span> <span class="p">})</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;[d&#39;</span><span class="p">,</span> <span class="n">vim</span><span class="p">.</span><span class="n">diagnostic</span><span class="p">.</span><span class="n">goto_prev</span><span class="p">,</span> <span class="p">{</span> <span class="n">desc</span> <span class="o">=</span> <span class="s1">&#39;Go to previous diagnostic message&#39;</span> <span class="p">})</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;]d&#39;</span><span class="p">,</span> <span class="n">vim</span><span class="p">.</span><span class="n">diagnostic</span><span class="p">.</span><span class="n">goto_next</span><span class="p">,</span> <span class="p">{</span> <span class="n">desc</span> <span class="o">=</span> <span class="s1">&#39;Go to next diagnostic message&#39;</span> <span class="p">})</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;leader&gt;e&#39;</span><span class="p">,</span> <span class="n">vim</span><span class="p">.</span><span class="n">diagnostic</span><span class="p">.</span><span class="n">open_float</span><span class="p">,</span> <span class="p">{</span> <span class="n">desc</span> <span class="o">=</span> <span class="s1">&#39;Open floating diagnostic message&#39;</span> <span class="p">})</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;leader&gt;q&#39;</span><span class="p">,</span> <span class="n">vim</span><span class="p">.</span><span class="n">diagnostic</span><span class="p">.</span><span class="n">setloclist</span><span class="p">,</span> <span class="p">{</span> <span class="n">desc</span> <span class="o">=</span> <span class="s1">&#39;Open diagnostics list&#39;</span> <span class="p">})</span>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>  <span class="kr">end</span>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="p">})</span>
+</span></code></pre></div>
+<h2 id="lsp-request">LSP Request</h2>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">local</span> <span class="kr">function</span> <span class="nf">test</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">ctx</span><span class="p">)</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>  <span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_buf_set_lines</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="n">vim</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">contents</span><span class="p">.</span><span class="n">value</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">))</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="kr">end</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="n">vim</span><span class="p">.</span><span class="n">lsp</span><span class="p">.</span><span class="n">buf_request</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;textDocument/hover&quot;</span><span class="p">,</span>  <span class="n">vim</span><span class="p">.</span><span class="n">lsp</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">make_position_params</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">test</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="using-lsp-without-nvim-lspconfig">Using LSP without nvim lspconfig</h2>
+<p>I'm not a fan of <a href="https://github.com/neovim/nvim-lspconfig">lspconfig</a> because
+I think it abstracts too much of how neovim functions behind obscure lua code.
+Imo, you really don't need to be that proficient in lua before you can figure
+out what's happening behind the scenes with your editor.</p>
+<p>If your goal is to be proficient in neovim and lua such that you can write your
+own scripts when the need rises, you should imo try to do without lspconfig.</p>
+<p>All that happens really is that neovim launches a particular binary, with
+particular settings when a particular filetype is opened.</p>
+<p>This is all you need to have in your <code>init.lua</code> to set up lua language server:</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_create_autocmd</span><span class="p">(</span><span class="s1">&#39;FileType&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  <span class="n">pattern</span> <span class="o">=</span> <span class="s1">&#39;lua&#39;</span><span class="p">,</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>  <span class="n">callback</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">ev</span><span class="p">)</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">lsp</span><span class="p">.</span><span class="n">start</span><span class="p">({</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>      <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;lua_ls&quot;</span><span class="p">,</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>      <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;lua-language-server&#39;</span> <span class="p">},</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>      <span class="n">root_dir</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fs</span><span class="p">.</span><span class="n">root</span><span class="p">(</span><span class="n">ev</span><span class="p">.</span><span class="n">buf</span><span class="p">,</span> <span class="p">{</span> <span class="s1">&#39;.luarc.json&#39;</span><span class="p">,</span> <span class="s1">&#39;.luarc.jsonc&#39;</span> <span class="p">}),</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>      <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>        <span class="n">Lua</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>          <span class="n">runtime</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>            <span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;LuaJIT&quot;</span><span class="p">,</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>          <span class="p">},</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>          <span class="n">workspace</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>            <span class="n">library</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>              <span class="s2">&quot;/usr/share/nvim/runtime&quot;</span><span class="p">,</span>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>            <span class="p">}</span>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>          <span class="p">},</span>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>        <span class="p">},</span>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>      <span class="p">},</span>
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>    <span class="p">})</span>
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>  <span class="kr">end</span><span class="p">,</span>
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="p">})</span>
+</span></code></pre></div>
+<p>Its so obvious what's going on right? We just create an autocommand. Whenever a
+filetype lua is opened, the function in callback gets executed. All that
+function does is launches the binary of language server. Now, if you've ever
+looked into the differences between treesitter and lsp, you might know that
+unlike treesitter the lsp is aware of your project as a whole. It knows what
+you should import from another file so that the variables in the current file
+you're editing is in scope. For that to happen, you need to let the lsp know
+which directory is the root of the project. This is why there's a <code>root_dir</code>
+argument.</p>
+<p>You can find out what goes into <code>settings</code> argument by reading the
+documentation of the specific language server and by checking out server-configurations
+page in nvim-lspconfig:
+<a href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md">https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md</a></p>
+<p>In <a href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#lua_ls">lua</a> for example, this section reveals what the settings should be:</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">client</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">settings</span><span class="p">.</span><span class="n">Lua</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">tbl_deep_extend</span><span class="p">(</span><span class="s1">&#39;force&#39;</span><span class="p">,</span> <span class="n">client</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">settings</span><span class="p">.</span><span class="n">Lua</span><span class="p">,</span> <span class="p">{</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>  <span class="n">runtime</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="c1">-- Tell the language server which version of Lua you&#39;re using</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="c1">-- (most likely LuaJIT in the case of Neovim)</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    <span class="n">version</span> <span class="o">=</span> <span class="s1">&#39;LuaJIT&#39;</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>  <span class="p">},</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>  <span class="c1">-- Make the server aware of Neovim runtime files</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>  <span class="n">workspace</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>    <span class="n">checkThirdParty</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>    <span class="n">library</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>      <span class="n">vim</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">VIMRUNTIME</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>      <span class="c1">-- Depending on the usage, you might want to add additional paths here.</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>      <span class="c1">-- &quot;${3rd}/luv/library&quot;</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>      <span class="c1">-- &quot;${3rd}/busted/library&quot;,</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>    <span class="p">}</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>    <span class="c1">-- or pull in all of &#39;runtimepath&#39;. NOTE: this is a lot slower</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>    <span class="c1">-- library = vim.api.nvim_get_runtime_file(&quot;&quot;, true)</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>  <span class="p">}</span>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="p">})</span>
+</span></code></pre></div>
+<p>Additional example (dart language server):</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_create_autocmd</span><span class="p">(</span><span class="s1">&#39;FileType&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>  <span class="n">pattern</span> <span class="o">=</span> <span class="s1">&#39;dart&#39;</span><span class="p">,</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>  <span class="n">callback</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">ev</span><span class="p">)</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">lsp</span><span class="p">.</span><span class="n">start</span><span class="p">({</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>      <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;dartls&quot;</span><span class="p">,</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>      <span class="n">cmd</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;dart&#39;</span><span class="p">,</span> <span class="s1">&#39;language-server&#39;</span><span class="p">,</span> <span class="s1">&#39;--protocol=lsp&#39;</span> <span class="p">},</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>      <span class="n">root_dir</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fs</span><span class="p">.</span><span class="n">root</span><span class="p">(</span><span class="n">ev</span><span class="p">.</span><span class="n">buf</span><span class="p">,</span> <span class="p">{</span> <span class="s1">&#39;pubspec.yaml&#39;</span> <span class="p">}),</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>      <span class="n">init_options</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>        <span class="n">closingLabels</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>        <span class="n">flutterOutline</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>        <span class="n">onlyAnalyzeProjectsWithOpenFiles</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>        <span class="n">outline</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>        <span class="n">suggestFromUnimportedLibraries</span> <span class="o">=</span> <span class="kc">true</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>      <span class="p">},</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>      <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>        <span class="n">dart</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>          <span class="n">completeFunctionCalls</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>          <span class="n">showTodos</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>        <span class="p">},</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>      <span class="p">},</span>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>    <span class="p">})</span>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>  <span class="kr">end</span><span class="p">,</span>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="p">})</span>
+</span></code></pre></div>
+<h2 id="installing-packages-without-package-manager">Installing packages without package manager</h2>
+<p>source: <a href="https://vi.stackexchange.com/questions/36509/how-do-i-install-a-package-in-neovim-without-a-package-manager">https://vi.stackexchange.com/questions/36509/how-do-i-install-a-package-in-neovim-without-a-package-manager</a></p>
+<p>Place the package in <code>~/.config/nvim/pack</code></p>
+<h3 id="eg-treesitter-installation">Eg: Treesitter installation</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nb">cd</span><span class="w"> </span>~/.config/nvim/pack
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>treesitter/start
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nb">cd</span><span class="w"> </span>treesitter/start
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>git<span class="w"> </span>clone<span class="w"> </span><span class="s1">&#39;https://github.com/nvim-treesitter/nvim-treesitter.git&#39;</span>
+</span></code></pre></div>
+<p>When you want to install a package, say nvim-treesitter, and you place it pack/</p>
+<h2 id="set-tw80-for-markdown-files">set tw=80 for markdown files</h2>
+<p>file: <code>~/.config/nvim/lua/core/autocmds.lua</code></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">local</span> <span class="n">group</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_create_augroup</span><span class="p">(</span><span class="s2">&quot;VectorClearAu&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="n">clear</span> <span class="o">=</span> <span class="kc">true</span> <span class="p">})</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_create_autocmd</span><span class="p">(</span><span class="s1">&#39;FileType&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>  <span class="n">pattern</span> <span class="o">=</span> <span class="s2">&quot;markdown&quot;</span><span class="p">,</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>  <span class="n">callback</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">opt</span><span class="p">.</span><span class="n">tw</span> <span class="o">=</span> <span class="mi">80</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>  <span class="kr">end</span><span class="p">,</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>  <span class="n">group</span> <span class="o">=</span> <span class="n">group</span><span class="p">,</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="p">})</span>
+</span></code></pre></div>
+<h2 id="autocommands">Autocommands</h2>
+<p>source: <a href="https://www.youtube.com/watch?v=ekMIIAqTZ34">TJ Devries YT</a></p>
+<p>test.lua:
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_create_autocmd</span><span class="p">(</span><span class="s1">&#39;BufEnter&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;echo &#39;Hello&#39;&quot;</span><span class="p">,</span> <span class="p">})</span>
+</span></code></pre></div></p>
+<p><code>BufEnter</code> is an event. Autocommands are tied to events. To see more about events <code>:h events</code></p>
+<p>To check autocmds tied to a particular event: <code>:au BufEnter</code></p>
+<p>To clear autocmds attached to particular event: <code>au! BufEnter</code></p>
+<p>As it is, if <code>test.lua</code> file is executed again, it greates another autocmd. So "Hello"
+gets print twice with every <code>BufEnter</code> event. This is why <code>augroup</code> is used.</p>
+<p>Creating <code>augroup</code>:</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">local</span> <span class="n">group</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_ceate_augroup</span><span class="p">(</span><span class="s2">&quot;SmashThatLikeButton&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="n">clear</span> <span class="o">=</span> <span class="kc">true</span> <span class="p">})</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="c1">-- if it was { clear = false } we&#39;d get the old behavior</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_create_autocmd</span><span class="p">(</span><span class="s1">&#39;BufEnter&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;echo &#39;Hello 1&#39;&quot;</span><span class="p">,</span> <span class="n">group</span> <span class="o">=</span> <span class="n">group</span> <span class="p">})</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_create_autocmd</span><span class="p">(</span><span class="s1">&#39;BufEnter&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;echo &#39;Hello 2&#39;&quot;</span><span class="p">,</span> <span class="n">group</span> <span class="o">=</span> <span class="n">group</span> <span class="p">})</span>
+</span></code></pre></div>
+<p>Now every time the file gets created, the autogroup gets cleared before its created,
+and with it the autocmds part of the group also gets cleared.</p>
+<p>Now, this might be the feature that we're gonna use more often —lua functions triggered
+by <code>events</code>.</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kd">local</span> <span class="n">group</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_ceate_augroup</span><span class="p">(</span><span class="s2">&quot;SmashThatLikeButton&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="n">clear</span> <span class="o">=</span> <span class="kc">true</span> <span class="p">})</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="c1">-- if it was { clear = false } we&#39;d get the old behavior</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_create_autocmd</span><span class="p">(</span><span class="s1">&#39;BufEnter&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;echo &#39;Hello 1&#39;&quot;</span><span class="p">,</span> <span class="n">group</span> <span class="o">=</span> <span class="n">group</span> <span class="p">})</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_create_autocmd</span><span class="p">(</span><span class="s1">&#39;BufEnter&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="n">callback</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="kr">end</span><span class="p">,</span> <span class="n">group</span> <span class="o">=</span> <span class="n">group</span> <span class="p">})</span>
+</span></code></pre></div>
+<h2 id="screenshots-to-markdown">Screenshots to markdown</h2>
+<p>This script both gets the latest file in ~/Pictures where my screenshots are and then copies them to <code>img/</code> folder
+in the same folder where the file is being edited.</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kd">local</span> <span class="n">M</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="n">M</span><span class="p">.</span><span class="n">insert_screenshot_markdown</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>  <span class="kd">local</span> <span class="n">bufno</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_get_current_buf</span><span class="p">()</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>  <span class="kd">local</span> <span class="n">winid</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">bufwinid</span><span class="p">(</span><span class="n">bufno</span><span class="p">)</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>  <span class="kd">local</span> <span class="n">path</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_buf_get_name</span><span class="p">(</span><span class="n">bufno</span><span class="p">)</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>  <span class="kd">local</span> <span class="n">pathtofile</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">fnamemodify</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;:h&#39;</span><span class="p">)</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>  <span class="kd">local</span> <span class="n">img_dir</span> <span class="o">=</span> <span class="n">pathtofile</span> <span class="o">..</span> <span class="s2">&quot;/img&quot;</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>  <span class="kd">local</span> <span class="n">stat</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">loop</span><span class="p">.</span><span class="n">fs_stat</span><span class="p">(</span><span class="n">img_dir</span><span class="p">)</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>  <span class="kd">local</span> <span class="n">dir_exists</span> <span class="o">=</span> <span class="n">stat</span> <span class="ow">and</span> <span class="n">stat</span><span class="p">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;directory&#39;</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>  <span class="kr">if</span> <span class="ow">not</span> <span class="n">dir_exists</span> <span class="kr">then</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>    <span class="kd">local</span> <span class="n">success</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">loop</span><span class="p">.</span><span class="n">fs_mkdir</span><span class="p">(</span><span class="n">img_dir</span><span class="p">,</span> <span class="mi">511</span><span class="p">)</span>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>    <span class="kr">if</span> <span class="ow">not</span> <span class="n">success</span> <span class="kr">then</span>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unable to create dir&quot;</span><span class="p">)</span>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>      <span class="kr">return</span> <span class="mi">1</span>
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>    <span class="kr">end</span>
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>  <span class="kr">end</span>
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>
+</span><span id="__span-20-20"><a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a>  <span class="kd">local</span> <span class="n">directory</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">expand</span><span class="p">(</span><span class="s1">&#39;~/Pictures&#39;</span><span class="p">)</span>
+</span><span id="__span-20-21"><a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a>  <span class="kd">local</span> <span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;ls -t &quot;</span> <span class="o">..</span> <span class="n">directory</span> <span class="o">..</span> <span class="s2">&quot; | head --lines 1&quot;</span>
+</span><span id="__span-20-22"><a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a>
+</span><span id="__span-20-23"><a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a>  <span class="kd">local</span> <span class="n">newest_file</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">system</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+</span><span id="__span-20-24"><a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a>  <span class="n">newest_file</span> <span class="o">=</span> <span class="n">newest_file</span><span class="p">:</span><span class="n">gsub</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><span id="__span-20-25"><a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a>
+</span><span id="__span-20-26"><a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a>  <span class="kd">local</span> <span class="n">cmd2</span> <span class="o">=</span> <span class="s2">&quot;cp &quot;</span> <span class="o">..</span> <span class="n">directory</span> <span class="o">..</span> <span class="s2">&quot;/&quot;</span> <span class="o">..</span> <span class="n">newest_file</span> <span class="o">..</span> <span class="s2">&quot; &quot;</span> <span class="o">..</span> <span class="n">img_dir</span>
+</span><span id="__span-20-27"><a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a>  <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">system</span><span class="p">(</span><span class="n">cmd2</span><span class="p">)</span>
+</span><span id="__span-20-28"><a id="__codelineno-20-28" name="__codelineno-20-28" href="#__codelineno-20-28"></a>
+</span><span id="__span-20-29"><a id="__codelineno-20-29" name="__codelineno-20-29" href="#__codelineno-20-29"></a>  <span class="kr">if</span> <span class="n">newest_file</span> <span class="o">~=</span> <span class="s2">&quot;&quot;</span> <span class="kr">then</span>
+</span><span id="__span-20-30"><a id="__codelineno-20-30" name="__codelineno-20-30" href="#__codelineno-20-30"></a>    <span class="kd">local</span> <span class="n">markdown_link</span> <span class="o">=</span> <span class="nb">string.format</span><span class="p">(</span><span class="s2">&quot;![%s](img/%s)&quot;</span><span class="p">,</span> <span class="n">newest_file</span><span class="p">,</span> <span class="n">newest_file</span><span class="p">)</span>
+</span><span id="__span-20-31"><a id="__codelineno-20-31" name="__codelineno-20-31" href="#__codelineno-20-31"></a>    <span class="kd">local</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="n">unpack</span><span class="p">(</span><span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_win_get_cursor</span><span class="p">(</span><span class="n">winid</span><span class="p">))</span>
+</span><span id="__span-20-32"><a id="__codelineno-20-32" name="__codelineno-20-32" href="#__codelineno-20-32"></a>    <span class="kd">local</span> <span class="n">lines</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_buf_get_lines</span><span class="p">(</span><span class="n">bufno</span><span class="p">,</span> <span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
+</span><span id="__span-20-33"><a id="__codelineno-20-33" name="__codelineno-20-33" href="#__codelineno-20-33"></a>    <span class="c1">-- Check if the &#39;lines&#39; table is empty</span>
+</span><span id="__span-20-34"><a id="__codelineno-20-34" name="__codelineno-20-34" href="#__codelineno-20-34"></a>    <span class="kd">local</span> <span class="n">line</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</span><span id="__span-20-35"><a id="__codelineno-20-35" name="__codelineno-20-35" href="#__codelineno-20-35"></a>    <span class="kr">if</span> <span class="o">#</span><span class="n">lines</span> <span class="o">~=</span> <span class="mi">0</span> <span class="kr">then</span>
+</span><span id="__span-20-36"><a id="__codelineno-20-36" name="__codelineno-20-36" href="#__codelineno-20-36"></a>      <span class="n">line</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span><span class="n">gsub</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+</span><span id="__span-20-37"><a id="__codelineno-20-37" name="__codelineno-20-37" href="#__codelineno-20-37"></a>    <span class="kr">end</span>
+</span><span id="__span-20-38"><a id="__codelineno-20-38" name="__codelineno-20-38" href="#__codelineno-20-38"></a>    <span class="kd">local</span> <span class="n">new_line</span> <span class="o">=</span> <span class="n">line</span> <span class="o">..</span> <span class="n">markdown_link</span>
+</span><span id="__span-20-39"><a id="__codelineno-20-39" name="__codelineno-20-39" href="#__codelineno-20-39"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_buf_set_lines</span><span class="p">(</span><span class="n">bufno</span><span class="p">,</span> <span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="p">{</span> <span class="n">new_line</span> <span class="p">})</span>
+</span><span id="__span-20-40"><a id="__codelineno-20-40" name="__codelineno-20-40" href="#__codelineno-20-40"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_win_set_cursor</span><span class="p">(</span><span class="n">winid</span><span class="p">,</span> <span class="p">{</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">+</span> <span class="o">#</span><span class="n">markdown_link</span> <span class="p">})</span>
+</span><span id="__span-20-41"><a id="__codelineno-20-41" name="__codelineno-20-41" href="#__codelineno-20-41"></a>  <span class="kr">end</span>
+</span><span id="__span-20-42"><a id="__codelineno-20-42" name="__codelineno-20-42" href="#__codelineno-20-42"></a><span class="kr">end</span>
+</span><span id="__span-20-43"><a id="__codelineno-20-43" name="__codelineno-20-43" href="#__codelineno-20-43"></a>
+</span><span id="__span-20-44"><a id="__codelineno-20-44" name="__codelineno-20-44" href="#__codelineno-20-44"></a><span class="kr">return</span> <span class="n">M</span>
+</span></code></pre></div>
+<p>The above script is placed in ~/plugins and it gets picked up by neovim lazy.nvim because of this mention
+in <code>~/.config/nvim/lua/plugins/vector.lua</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>{
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a> dir = &quot;/home/vector/plugins/markdown-screenshot.nvim&quot;,
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a> config = function()
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>   vim.keymap.set({ &#39;n&#39;, &#39;i&#39; }, &#39;&lt;Leader&gt;p&#39;,
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>     function()
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>       require(&quot;markdown-screenshot&quot;).insert_screenshot_markdown()
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>     end,
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>     { desc = &quot;Paste screenshot&quot; })
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a> end
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>},
+</span></code></pre></div>
+<h2 id="scripting-workflow">Scripting workflow</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>:vnew ~/.config/nvim/lua/development/ss.lua
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>:echo nvim_get_current_buf()
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>1
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>local bufno = 1
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>local path = vim.api.nvim_buf_get_name(bufno)
+</span></code></pre></div>
+<h2 id="getting-treesitter-root">Getting treesitter root</h2>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kd">local</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">treesitter</span><span class="p">.</span><span class="n">get_parser</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;dart&quot;</span><span class="p">,</span> <span class="p">{})</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="kd">local</span> <span class="n">tree</span> <span class="o">=</span> <span class="n">parser</span><span class="p">:</span><span class="n">parse</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="kd">local</span> <span class="n">root</span> <span class="o">=</span> <span class="n">tree</span><span class="p">:</span><span class="n">root</span><span class="p">()</span>
+</span></code></pre></div>
+<h2 id="visual-range">Visual range</h2>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kd">local</span> <span class="n">cursorpos</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">getpos</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="kd">local</span> <span class="n">vstart</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">getpos</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="c1">-- { 0, 31, 4, 0 jo}</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="c1">-- row: cursorpos[2] row: vstart[2]</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="c1">-- col: curspor[3], col: vstart[3]</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>visual range: getpos(&#39;v&#39;) -- [2] and [3]
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>nvim_win_get_cursor(0) [1] and [2]
+</span></code></pre></div>
+<h2 id="note">Note</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>vim.fn.getpos(&#39;v&#39;)
+</span></code></pre></div>
+<p>to</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>vim.fn.getpos(&#39;.&#39;)
+</span></code></pre></div>
+<p>is visual selection in vim. Note the return value</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1">--string[]</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="kd">local</span> <span class="n">op1</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">getpos</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">)</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="kd">local</span> <span class="n">op2</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">getpos</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="nb">table.insert</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">vim</span><span class="p">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">op1</span><span class="p">))</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="nb">table.insert</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">vim</span><span class="p">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">op2</span><span class="p">))</span>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_buf_set_text</span><span class="p">(</span><span class="mi">19</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="c1">-- note 19 is output buffer</span>
+</span></code></pre></div>
+<h2 id="dealing-with-visual-ranges-incomplete">Dealing with visual ranges (incomplete)</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>local outputbuf = 10
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>local inputbuf = 1
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>local inputwin = 1000
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>local cursorpos = vim.api.nvim_win_get_cursor(1000)
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>local visualstart = vim.fn.getpos(&#39;v&#39;)
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>vim.api.nvim_buf_set_lines(outputbuf, 0, -1, false, {
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>  string.format(&quot;Row: %s Column: %s&quot;, cursorpos[1], cursorpos[2]),
+</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a>  string.format(&quot;Row: %s Column: %s&quot;, visualstart[2], visualstart[3])
+</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a>})
+</span></code></pre></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+  
+
+
+
+  <!-- replace disqus with isso -->
+  <br>
+  <h2 id="__comments">Comments</h2>
+  <div id="disqus_thread"></div>
+  <script 
+    data-isso="https://isso.vectorspace.xyz/" 
+    data-isso-css="true" 
+    data-isso-require-author="true" 
+    data-isso-require-email="true" 
+    data-isso-reply-to-self="false"
+    src="https://isso.vectorspace.xyz/js/embed.min.js">
+  </script>
+
+<section id="isso-thread"></section>
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/vectorspacexyz" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/vectorspacexyz" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>
