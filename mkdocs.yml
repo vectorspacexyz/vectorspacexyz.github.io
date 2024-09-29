@@ -1,4 +1,5 @@
-site_name: vectorspace.xyz
+# site_name: vectorspace.xyz
+site_name: vectorspacexyz.github.io
 theme:
   name: material
   custom_dir: overrides
