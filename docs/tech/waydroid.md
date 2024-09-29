@@ -4,7 +4,9 @@ comments: true
 ---
 
 ###  Installation
-* Use linux-zen kernel
+```sh
+sudo pacman -S linux-xanmod-anbox linux-xanmod-anbox-headers
+```
 
 ```sh
 sudo rm -rf /var/lib/waydroid /home/.waydroid ~/waydroid ~/.share/waydroid ~/.local/share/applications/*aydroid* ~/.local/share/waydroid
@@ -13,7 +15,7 @@ sudo waydroid init -s GAPPS
 
 # waydroid-extras: https://aur.archlinux.org/waydroid-script-git.git
 # For amd use libndk
-sudo waydroid-extras install libndk widevine
+sudo waydroid-extras install libndk widevine magisk
 
 sudo systemctl enable waydroid-container
 sudo systemctl start waydroid-container

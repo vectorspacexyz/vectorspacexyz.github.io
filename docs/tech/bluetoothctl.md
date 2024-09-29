@@ -41,7 +41,7 @@ yes
 [agent] Authorize service B088111f-0006-1006-8006-0888579b34Fb (yes/no): [NEW] Endpoint /org/bluez/hcib/dev_41_42_A2_76_C8_F3/sep2
 [agent] Authorize service B088111f-006-100-8006-0888579b34Fb (yes/no): [NEW] Transport /org/bluez/hci6/dev_41_42_A2.76_C8_F3/dB
 [agent] Authorize service 809111-0880-1808-3086-8030579b34fb (yes/no): yes
-[WieCool N1]# Authorize service
+[WeCool N1]# Authorize service
 [WeCool N1]# 1;39m[agent] Authorize service B088118e-0006-1006-8006-088579b34Fb (yes/no): yes
 [WeCool N1]# [CHG] Transport /org/bluez/hcib/dev_4142_A2_76_C8_F3/fd8 Volue: 8x007f (127)
 [WeCool N1]#
@@ -104,7 +104,7 @@ trust *address*
 I hope its gonna be smooth sailing from this point because the device is now
 listed with `devices` command at `bluetoothctl` prompt.
 
-related: [switch audio sink](../switch-audio-sink)
+related: [switch audio sink](switch-audio-sink.md)
 
 ## Solution to failed attempt at reconnecting to a previously paired device
 
@@ -122,6 +122,7 @@ and did the following:
 ```
 sudo cp -r /usr/share/pipewire/media-session.d /etc/pipewire/
 ```
+
 ```
 systemctl --user restart pipewire
 ```
@@ -449,3 +450,28 @@ bluez_monitor.rules = {
   },
 }
 ```
+
+## Disable auto-connect
+
+source: [https://www.reddit.com/r/Fedora/comments/iwzct5/comment/hxo9kej](https://www.reddit.com/r/Fedora/comments/iwzct5/comment/hxo9kej)
+
+![1710908396.png](img/1710908396.png)
+
+I noticed that my wecool n1 neckband requests approval before connecting but it
+always connect with the right profile (a2dp_sink), like so:
+
+![1707885245.png](img/1707885245.png)
+
+But my amazon basics neckband connects automatically but with incorrect profile
+(hsp/hfp). So I tried to disable autoconnect for the neckband expecting then it
+would connnect with a2dp_sink.
+
+This is possible if you pair the device but don't trust it. Since AB neckband
+was already paired, I did untrust device in bluetoothctl prompt and rebooted it:
+
+```
+untrust 41:42:73:C1:BD:00
+```
+
+Now it requests permission to connect but it is connecting with the right
+profile.

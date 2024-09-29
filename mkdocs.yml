@@ -1,13 +1,16 @@
 site_name: vectorspace.xyz
 theme:
   name: material
-  custom_dir: docs/overrides
-  # favicon: img/tux.svg
-  # favicon: img/Tux.png
+  custom_dir: overrides
   favicon: img/Tux.png
   logo: img/Tux.png
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    # - navigation.footer
+    # - navigation.sections
   palette:
-    primary: blue grey
+    primary: white 
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
@@ -16,5 +19,17 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
-# plugins:
-#   - blog
+  - footnotes
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/vectorspacexyz
+    - icon: fontawesome/brands/x-twitter
+      link: https://twitter.com/vectorspacexyz
+plugins:
+  - blog
+#   - social:
+#       cards: true
+#   # - blog
+
+

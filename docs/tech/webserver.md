@@ -131,3 +131,37 @@ Paste the output of the command somewhere. Its important.
 
 ... After doing all this, I'd say the recommended way to install outline would
 be to download Outline App Manager and following  the 2 line instruction there.
+
+## Neovim config
+
+`~/.config/nvim/init.lua`:
+
+```lua
+-- Remap Space to Leader in normal and visual mode
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+vim.g.mapleader = " "
+
+-- H,L to switch tabs in normal mode
+vim.keymap.set('n', 'H', function()
+        vim.cmd("tabp")
+end, { desc = 'Switch to previous tab' })
+
+vim.keymap.set('n', 'L', function()
+        vim.cmd("tabn")
+end, { desc = 'Switch to next tab' })
+
+-- Copy the directory containing file
+vim.keymap.set('n', '<leader>cd', function()
+  local cwd = vim.fn.expand('%:p:h')
+  vim.fn.setreg('+', cwd)
+  print("Copied " .. cwd .. " to + register.")
+end, { desc = "Copy the directory containing file" })
+
+-- Copy the file path
+vim.keymap.set('n', '<leader>cp', function()
+  local fp = vim.fn.expand('%:p')
+  vim.fn.setreg('+', fp)
+  print("Copied " .. fp .. " to + register.")
+end, { desc = "Copy the file path" })
+
+```

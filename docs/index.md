@@ -1,7 +1,13 @@
 ---
-title: notes@vectorspace.xyz
-comments: true
+template: home.html
+description: vectorspace.xyz
+hide:
+  - navigation
+  - navigation.footer
+  - footer
+  - toc
+  - edit
+  - view
+  - header
+  - main
 ---
-## "*Information is my weapon, Shepherd.*"
-
-![Illusive man](img/illusive-man.jpg)
